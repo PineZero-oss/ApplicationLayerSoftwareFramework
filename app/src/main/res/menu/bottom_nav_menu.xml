@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/nav_home"
+        android:title="home"
+        android:icon="@drawable/bn_home"
+         />
+
+    <item
+        android:id="@+id/nav_usage"
+        android:title="usage"
+        android:icon="@drawable/bn_usage"
+        />
+
+    <item
+        android:id="@+id/nav_efficiency"
+        android:title="efficiency"
+        android:icon="@drawable/bn_efficiency"
+        />
+
+    <item
+        android:id="@+id/nav_account"
+        android:title="account"
+        android:icon="@drawable/bn_account"
+        />
+
+
+
+</menu>
