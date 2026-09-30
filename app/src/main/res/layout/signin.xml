@@ -10,7 +10,7 @@
 
 
 
-    <!-- welcome back message -->
+    <!-- welcome back message  -->
     <TextView
         android:id="@+id/acc_WelcomeBack"
         android:layout_width="262dp"

@@ -8,7 +8,7 @@
     android:background="@drawable/account_creation_bg"
     android:padding="32dp">
 
-    <!-- welcome back message -->
+    <!-- welcome back message  -->
     <TextView
         android:id="@+id/acc_Welcome"
         android:layout_width="188dp"
