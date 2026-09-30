@@ -2,4 +2,21 @@
     <string name="app_name">Application-Layer-Software-Framework-for-Solar-Powered-IoT-Systems</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_account">Create Account</string>"
+    <string name="repeat_password">Repeat Password</string>
+    <string name="welcome_msg">Welcome!</string>
+    <string name="welcomeBack_msg">Welcome back!!</string>
+    <string name="subtitle">Enter your account details and get started.</string>
+    <string name="subtitle2">Enter your account details to get started again!!</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="Create">Create</string>
+    <string name="Login_redirect">Already have an account? Login</string>
+    <string name="Create_redirect">Don\'t have an account? Sign up</string>
+    <string name="forgot_password_redirect">forgot password?</string>
+
+
+
 </resources>
