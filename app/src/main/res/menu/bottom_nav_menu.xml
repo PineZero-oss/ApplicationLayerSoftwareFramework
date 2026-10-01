@@ -4,25 +4,25 @@
 
     <item
         android:id="@+id/nav_home"
-        android:title="home"
+        android:title="@string/bNav_Home"
         android:icon="@drawable/bn_home"
          />
 
     <item
         android:id="@+id/nav_usage"
-        android:title="usage"
+        android:title="@string/bNav_Usage"
         android:icon="@drawable/bn_usage"
         />
 
     <item
         android:id="@+id/nav_efficiency"
-        android:title="efficiency"
+        android:title="@string/bNav_Efficiency"
         android:icon="@drawable/bn_efficiency"
         />
 
     <item
         android:id="@+id/nav_account"
-        android:title="account"
+        android:title="@string/bNav_Account"
         android:icon="@drawable/bn_account"
         />
 

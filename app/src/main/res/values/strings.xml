@@ -16,6 +16,11 @@
     <string name="Login_redirect">Already have an account? Login</string>
     <string name="Create_redirect">Don\'t have an account? Sign up</string>
     <string name="forgot_password_redirect">forgot password?</string>
+    <string name="bNav_Home">Home</string>
+    <string name="bNav_Usage">usage</string>
+    <string name="bNav_Efficiency">Efficiency</string>
+    <string name="bNav_Account">Account</string>
+
 
 
 
