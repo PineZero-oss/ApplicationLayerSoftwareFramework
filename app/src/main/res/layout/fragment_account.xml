@@ -7,27 +7,35 @@
     android:orientation="vertical"
     tools:context=".account">
 
+    <!-- nested scroll view allows for scrolling -->
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <!-- account header -->
         <TextView
             android:id="@+id/p_accountHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bNav_Account"
             android:textAlignment="textStart"
+            android:textStyle="bold"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.102"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.15" />
+            app:layout_constraintVertical_bias="0.076" />
 
+        <!-- profile image holder -->
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/p_ProfilePicture"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="12dp"
@@ -37,6 +45,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/p_accountHeader" />
 
+        <!-- username display field, currently static -->
         <TextView
             android:id="@+id/p_username"
             android:layout_width="wrap_content"
@@ -47,8 +56,8 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
+            app:layout_constraintTop_toBottomOf="@+id/p_ProfilePicture" />
+        <!-- email display field, currently static -->
         <TextView
             android:id="@+id/p_Email"
             android:layout_width="wrap_content"
@@ -61,9 +70,265 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/p_username" />
 
+        <!-- account options, material card view used to create a card view -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/solarOptions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            app:cardBackgroundColor="@color/acb_yellow"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/p_Email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+         <!-- device options live here-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/account_devices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="12dp"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:text="@string/accFrag_devices"
+                android:textSize="16sp"
+                android:foreground="?selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                app:drawableLeftCompat="@drawable/p_solar_icon" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/black"/>
+
+                <TextView
+                    android:id="@+id/account_solarArray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:text="@string/accFrag_solarArray"
+                    android:textSize="16sp"
+                    android:foreground="?selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/black"/>
+
+                <TextView
+                    android:id="@+id/account_battery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:text="@string/accFrag_battery"
+                    android:textSize="16sp"
+                    android:foreground="?selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- notification options, material card view used to create a card view -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/notificationOptions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            app:cardBackgroundColor="@color/acb_yellow"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/solarOptions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- notification options live here-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/account_preferences"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:text="@string/accFrag_Preferences"
+                    android:textSize="16sp"
+                    android:foreground="?selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/black"/>
+
+                <TextView
+                    android:id="@+id/account_pushNotifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:text="@string/accFrag_PushNotifications"
+                    android:textSize="16sp"
+                    android:foreground="?selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- data options, material card view used to create a card view -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/DataOptions"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            app:cardBackgroundColor="@color/acb_yellow"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/notificationOptions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- data options live here-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/account_localData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:text="@string/accFrag_localData"
+                    android:textSize="16sp"
+                    android:foreground="?selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:background="@color/black"/>
+
+                <TextView
+                    android:id="@+id/account_syncNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:text="@string/accFrag_syncNow"
+                    android:textSize="16sp"
+                    android:foreground="?selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- display units, material card view used to create a card view -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/DisplayUnits"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="24dp"
+            app:cardBackgroundColor="@color/acb_yellow"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DataOptions">
+
+            <!-- display units options live here -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/account_unitsAndDisplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawablePadding="12dp"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:padding="16dp"
+                    android:text="@string/accFrag_Preferences"
+                    android:textSize="16sp"
+                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- log out button -->
+        <Button
+            android:id="@+id/acc_logoutBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="90dp"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/black"
+            android:textStyle="bold"
+            android:text="@string/accFrag_logOut"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DisplayUnits"
+             />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
 
+
+
+
+</androidx.core.widget.NestedScrollView>
 </FrameLayout>

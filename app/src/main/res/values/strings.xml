@@ -20,6 +20,15 @@
     <string name="bNav_Usage">usage</string>
     <string name="bNav_Efficiency">Efficiency</string>
     <string name="bNav_Account">Account</string>
+    <string name="accFrag_devices">Devices</string>
+    <string name="accFrag_solarArray">Solar Array</string>
+    <string name="accFrag_battery">Battery</string>
+    <string name="accFrag_Preferences">Preferences</string>
+    <string name="accFrag_PushNotifications">Push Notifications</string>
+    <string name="accFrag_localData">Local Data</string>
+    <string name="accFrag_syncNow">Sync Now</string>
+    <string name="accFrag_logOut">Log Out</string>
+
 
 
 
