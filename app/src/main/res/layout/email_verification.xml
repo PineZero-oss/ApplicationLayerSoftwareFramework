@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp">
+
+
+    <ImageView
+        android:id="@+id/ev_backBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:contentDescription="@string/emailVerification_back"
+        android:focusable="true"
+        android:src="@drawable/arrow_back_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/acc_LoginHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="176dp"
+        android:text="@string/emailVerification_heading"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/verification_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/emailVerification_message"
+        android:textAlignment="textStart"
+        android:textColor="@color/brown"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/acc_LoginHeader"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verification_message"
+        app:layout_constraintVertical_bias="0.036">
+
+        <EditText
+            android:id="@+id/otp_input1"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/otp_input_background"
+            android:gravity="center"
+            android:hint="@string/emailVerification_hint"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="@color/otp_textColor"
+            android:textColorHint="@color/otp_textColor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/acc_signup_redirect"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/otp_input2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/otp_input_background"
+            android:gravity="center"
+            android:hint="@string/emailVerification_hint"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="@color/otp_textColor"
+            android:textColorHint="@color/otp_textColor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/acc_signup_redirect"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/otp_input3"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/otp_input_background"
+            android:gravity="center"
+            android:hint="@string/emailVerification_hint"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="@color/otp_textColor"
+            android:textColorHint="@color/otp_textColor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/acc_signup_redirect"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <EditText
+            android:id="@+id/otp_input4"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/otp_input_background"
+            android:gravity="center"
+            android:hint="@string/emailVerification_hint"
+            android:inputType="number"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textColor="@color/otp_textColor"
+            android:textColorHint="@color/otp_textColor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/acc_signup_redirect"
+            app:layout_constraintVertical_bias="0.0" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/otp_resendCode"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="@string/emailVerification_resend"
+        android:textColor="@color/otp_textColor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/otp_verify_and_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="@string/emailVerification_message_btn"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_resendCode"
+        app:layout_constraintVertical_bias="0.105" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

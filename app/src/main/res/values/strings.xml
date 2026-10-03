@@ -29,6 +29,13 @@
     <string name="accFrag_syncNow">Sync Now</string>
     <string name="accFrag_unitsAndDisplay">Units &amp; Display</string>
     <string name="accFrag_logOut">Log Out</string>
+    <string name="emailVerification_back">Back</string>
+    <string name="emailVerification_heading">Check your email</string>
+    <string name="emailVerification_message">We have sent a 4-digit verification code to your email </string>
+    <string name="emailVerification_hint">X</string>
+    <string name="emailVerification_resend">Resend Code</string>
+    <string name="emailVerification_message_btn">Verify &amp; Continue</string>
+
 
 
 
