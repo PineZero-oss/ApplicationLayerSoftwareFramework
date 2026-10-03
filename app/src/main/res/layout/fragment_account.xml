@@ -103,7 +103,7 @@
                 android:foreground="?selectableItemBackground"
                 android:clickable="true"
                 android:focusable="true"
-                app:drawableLeftCompat="@drawable/p_solar_icon" />
+                app:drawableLeftCompat="@drawable/p_device_icon" />
 
                 <View
                     android:layout_width="match_parent"
@@ -144,7 +144,7 @@
                     android:foreground="?selectableItemBackground"
                     android:clickable="true"
                     android:focusable="true"
-                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+                    app:drawableLeftCompat="@drawable/p_battery_icon" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -182,7 +182,7 @@
                     android:foreground="?selectableItemBackground"
                     android:clickable="true"
                     android:focusable="true"
-                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+                    app:drawableLeftCompat="@drawable/p_preferences_icon" />
 
                 <View
                     android:layout_width="match_parent"
@@ -203,7 +203,7 @@
                     android:foreground="?selectableItemBackground"
                     android:clickable="true"
                     android:focusable="true"
-                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+                    app:drawableLeftCompat="@drawable/p_notifications_icon" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -240,7 +240,7 @@
                     android:foreground="?selectableItemBackground"
                     android:clickable="true"
                     android:focusable="true"
-                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+                    app:drawableLeftCompat="@drawable/p_local_data_icon" />
 
                 <View
                     android:layout_width="match_parent"
@@ -261,7 +261,7 @@
                     android:foreground="?selectableItemBackground"
                     android:clickable="true"
                     android:focusable="true"
-                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+                    app:drawableLeftCompat="@drawable/p_sync_icon" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -296,9 +296,9 @@
                     android:foreground="?selectableItemBackground"
                     android:gravity="center_vertical"
                     android:padding="16dp"
-                    android:text="@string/accFrag_Preferences"
+                    android:text="@string/accFrag_unitsAndDisplay"
                     android:textSize="16sp"
-                    app:drawableLeftCompat="@drawable/p_solar_icon" />
+                    app:drawableLeftCompat="@drawable/p_units_display_icon" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

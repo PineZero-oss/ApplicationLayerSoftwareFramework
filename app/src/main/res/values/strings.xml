@@ -27,6 +27,7 @@
     <string name="accFrag_PushNotifications">Push Notifications</string>
     <string name="accFrag_localData">Local Data</string>
     <string name="accFrag_syncNow">Sync Now</string>
+    <string name="accFrag_unitsAndDisplay">Units &amp; Display</string>
     <string name="accFrag_logOut">Log Out</string>
 
 
