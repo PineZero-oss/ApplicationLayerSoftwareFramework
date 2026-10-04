@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1089900969590",
+    "project_id": "applicationlayersoftware",
+    "storage_bucket": "applicationlayersoftware.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1089900969590:android:de2cc7a63d792c0e5d2957",
+        "android_client_info": {
+          "package_name": "com.example.application_layer_software_framework_for_solar_powered_iot_systems"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2nFgUgSIRfJ7IhUmPcPTaEhgtc84NCyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
