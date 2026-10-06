@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/account_creation_bg"
+    android:padding="32dp">
+
+
+
+    <!-- welcome back message  -->
+    <TextView
+        android:id="@+id/acc_WelcomeBack"
+        android:layout_width="262dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/welcomeBack_msg"
+        android:textAlignment="center"
+        android:textColor="@color/brown"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- subheading -->
+    <TextView
+        android:id="@+id/ac_Subtitle2"
+        android:layout_width="295dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/subtitle2"
+        android:textAlignment="center"
+        android:textColor="@color/brown"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/acc_WelcomeBack" />
+
+    <!-- Login heading -->
+    <TextView
+        android:id="@+id/acc_LoginHeader"
+        android:layout_width="308dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/login"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ac_Subtitle2" />
+
+    <!-- Account creation redirect -->
+    <TextView
+        android:id="@+id/acc_signup_redirect"
+        android:layout_width="236dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Create_redirect"
+        android:textColor="@color/brown"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/acc_LoginHeader"
+        app:layout_constraintTop_toBottomOf="@id/acc_LoginHeader" />
+
+    <!-- Email Field -->
+    <EditText
+        android:id="@+id/acc_email"
+        android:layout_width="324dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/account_creation_rounded_corner"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/acc_password"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="@id/acc_password"
+        app:layout_constraintTop_toBottomOf="@id/acc_signup_redirect" />
+
+    <!-- Password Field -->
+    <EditText
+        android:id="@+id/acc_password"
+        android:layout_width="325dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/account_creation_rounded_corner"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/acc_email" />
+
+    <!-- Forgot Password Field -->
+    <TextView
+        android:id="@+id/acc_forgotPassword_redirect"
+        android:layout_width="236dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/forgot_password_redirect"
+        android:textColor="@color/brown"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/acc_password"
+        app:layout_constraintTop_toBottomOf="@id/acc_password" />
+
+    <!-- Login button -->
+    <Button
+        android:id="@+id/acc_createBtn"
+        android:layout_width="122dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/acb_yellow"
+        android:padding="16dp"
+        android:text="@string/login"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/acc_password"
+        app:layout_constraintTop_toBottomOf="@id/acc_password" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Application-Layer-Software-Framework-for-Solar-Powered-IoT-Systems</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_account">Create Account</string>"
+    <string name="repeat_password">Repeat Password</string>
+    <string name="welcome_msg">Welcome!</string>
+    <string name="welcomeBack_msg">Welcome back!!</string>
+    <string name="subtitle">Enter your account details and get started.</string>
+    <string name="subtitle2">Enter your account details to get started again!!</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="Create">Create</string>
+    <string name="Login_redirect">Already have an account? Login</string>
+    <string name="Create_redirect">Don\'t have an account? Sign up</string>
+    <string name="forgot_password_redirect">forgot password?</string>
+    <string name="bNav_Home">Home</string>
+    <string name="bNav_Usage">usage</string>
+    <string name="bNav_Efficiency">Efficiency</string>
+    <string name="bNav_Account">Account</string>
+    <string name="accFrag_devices">Devices</string>
+    <string name="accFrag_solarArray">Solar Array</string>
+    <string name="accFrag_battery">Battery</string>
+    <string name="accFrag_Preferences">Preferences</string>
+    <string name="accFrag_PushNotifications">Push Notifications</string>
+    <string name="accFrag_localData">Local Data</string>
+    <string name="accFrag_syncNow">Sync Now</string>
+    <string name="accFrag_unitsAndDisplay">Units &amp; Display</string>
+    <string name="accFrag_logOut">Log Out</string>
+    <string name="emailVerification_back">Back</string>
+    <string name="emailVerification_heading">Check your email</string>
+    <string name="emailVerification_message">We have sent a 4-digit verification code to your email </string>
+    <string name="emailVerification_hint">X</string>
+    <string name="emailVerification_resend">Resend Code</string>
+    <string name="emailVerification_message_btn">Verify &amp; Continue</string>
+
+
+
+
+
+
+</resources>
