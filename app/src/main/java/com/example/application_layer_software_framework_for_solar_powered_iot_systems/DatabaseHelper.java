@@ -1,6 +1,8 @@
 package com.example.application_layer_software_framework_for_solar_powered_iot_systems;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
@@ -78,5 +80,51 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS devices;");
         db.execSQL("DROP TABLE IF EXISTS users;");
         onCreate(db);
+    }
+
+    // Insert user into SQLite
+    public boolean insertUser(String userId, String username, String email, String passwordHash, String createdAt) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("user_id", userId);
+        values.put("username", username);
+        values.put("email", email);
+        values.put("password_hash", passwordHash);
+        values.put("created_at", createdAt);
+
+        long result = db.insert("users", null, values);
+        return result != -1;
+    }
+
+    // Check if an email is already present locally
+    public boolean checkEmailExists(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT user_id FROM users WHERE email = ?", new String[]{email});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        return exists;
+    }
+
+    // Verify password hash using BCrypt for offline authentication
+    public boolean verifyLocalCredentials(String email, String plainPassword) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(
+                "SELECT password_hash FROM users WHERE email = ?",
+                new String[]{email}
+        );
+
+        boolean isValid = false;
+        if (cursor.moveToFirst()) {
+            String storedHash = cursor.getString(cursor.getColumnIndexOrThrow("password_hash"));
+            isValid = HashSecurity.checkPassword(plainPassword, storedHash);
+        }
+        cursor.close();
+        return isValid;
+    }
+
+    // Retrieve user details by email
+    public Cursor getUserByEmail(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT user_id, username, email, created_at FROM users WHERE email = ?", new String[]{email});
     }
 }
