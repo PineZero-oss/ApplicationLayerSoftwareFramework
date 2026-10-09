@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/account_creation_bg"
+    android:padding="32dp">
+
+    <!-- welcome back message  -->
+    <TextView
+        android:id="@+id/acc_Welcome"
+        android:layout_width="188dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/welcome_msg"
+        android:textAlignment="center"
+        android:textColor="@color/brown"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!-- subheading -->
+    <TextView
+        android:id="@+id/ac_Subtitle"
+        android:layout_width="295dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/subtitle"
+        android:textAlignment="center"
+        android:textColor="@color/brown"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/acc_Welcome" />
+
+    <!-- Create account heading -->
+    <TextView
+        android:id="@+id/acc_CreateAccountHeader"
+        android:layout_width="323dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="36dp"
+        android:text="@string/create_account"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ac_Subtitle" />
+
+    <!-- Username Field -->
+    <EditText
+        android:id="@+id/acc_username"
+        android:layout_width="326dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/account_creation_rounded_corner"
+        android:hint="@string/username"
+        android:inputType="text"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/acc_CreateAccountHeader" />
+
+    <!-- Email Field -->
+    <EditText
+        android:id="@+id/acc_email"
+        android:layout_width="324dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/account_creation_rounded_corner"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/acc_username" />
+
+    <!-- Password Field -->
+    <EditText
+        android:id="@+id/acc_password"
+        android:layout_width="325dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/account_creation_rounded_corner"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/acc_email" />
+
+    <!-- Repeat Password Field -->
+
+    <EditText
+        android:id="@+id/acc_repeatPassword"
+        android:layout_width="324dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/account_creation_rounded_corner"
+        android:hint="@string/repeat_password"
+        android:inputType="textPassword"
+        android:padding="14dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/acc_password" />
+
+    <!-- Login redirect -->
+    <TextView
+        android:id="@+id/acc_login_redirect"
+        android:layout_width="236dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/Login_redirect"
+        android:textColor="@color/brown"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/acc_repeatPassword"
+        app:layout_constraintTop_toBottomOf="@id/acc_repeatPassword" />
+
+    <!-- create account button -->
+    <Button
+        android:id="@+id/acc_createBtn"
+        android:layout_width="122dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="@color/acb_yellow"
+        android:padding="16dp"
+        android:text="@string/Create"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/acc_repeatPassword"
+        app:layout_constraintTop_toBottomOf="@id/acc_repeatPassword" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
