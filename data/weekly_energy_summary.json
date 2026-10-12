@@ -1,43 +1,1401 @@
-{
-  "deviceId": "solar-array-01",
-  "periodStart": "2026-10-06",
-  "periodEnd": "2026-10-12",
-  "dataSource": "SIMULATED",
-  "unit": "kWh",
-  "totalEnergyKwh": 221.63,
-  "averageDailyEnergyKwh": 31.66,
-  "bestDay": {
-    "date": "2026-10-12",
-    "energyKwh": 41.31
-  },
-  "dailyTotals": [
-    {
-      "date": "2026-10-06",
-      "energyKwh": 36.45
+[
+  {
+    "deviceId": "solar-array-01",
+    "periodStart": "2025-11-01",
+    "periodEnd": "2026-10-12",
+    "dataSource": "SIMULATED",
+    "unit": "kWh",
+    "totalEnergyKwh": 11600.27,
+    "averageDailyEnergyKwh": 33.53,
+    "bestDay": {
+      "date": "2026-06-18",
+      "energyKwh": 43.28
     },
-    {
-      "date": "2026-10-07",
-      "energyKwh": 32.66
-    },
-    {
-      "date": "2026-10-08",
-      "energyKwh": 28.53
-    },
-    {
-      "date": "2026-10-09",
-      "energyKwh": 30.86
-    },
-    {
-      "date": "2026-10-10",
-      "energyKwh": 25.05
-    },
-    {
-      "date": "2026-10-11",
-      "energyKwh": 26.77
-    },
-    {
-      "date": "2026-10-12",
-      "energyKwh": 41.31
-    }
-  ]
-}
+    "dailyTotals": [
+      {
+        "date": "2025-11-01",
+        "energyKwh": 24.71
+      },
+      {
+        "date": "2025-11-02",
+        "energyKwh": 37.87
+      },
+      {
+        "date": "2025-11-03",
+        "energyKwh": 33.92
+      },
+      {
+        "date": "2025-11-04",
+        "energyKwh": 31.94
+      },
+      {
+        "date": "2025-11-05",
+        "energyKwh": 41.08
+      },
+      {
+        "date": "2025-11-06",
+        "energyKwh": 40.48
+      },
+      {
+        "date": "2025-11-07",
+        "energyKwh": 38.82
+      },
+      {
+        "date": "2025-11-08",
+        "energyKwh": 37.29
+      },
+      {
+        "date": "2025-11-09",
+        "energyKwh": 31.16
+      },
+      {
+        "date": "2025-11-10",
+        "energyKwh": 27.93
+      },
+      {
+        "date": "2025-11-11",
+        "energyKwh": 42.61
+      },
+      {
+        "date": "2025-11-12",
+        "energyKwh": 27.27
+      },
+      {
+        "date": "2025-11-13",
+        "energyKwh": 40.36
+      },
+      {
+        "date": "2025-11-14",
+        "energyKwh": 36.59
+      },
+      {
+        "date": "2025-11-15",
+        "energyKwh": 28.57
+      },
+      {
+        "date": "2025-11-16",
+        "energyKwh": 42.81
+      },
+      {
+        "date": "2025-11-17",
+        "energyKwh": 39.47
+      },
+      {
+        "date": "2025-11-18",
+        "energyKwh": 39.05
+      },
+      {
+        "date": "2025-11-19",
+        "energyKwh": 27.13
+      },
+      {
+        "date": "2025-11-20",
+        "energyKwh": 23.97
+      },
+      {
+        "date": "2025-11-21",
+        "energyKwh": 36.88
+      },
+      {
+        "date": "2025-11-22",
+        "energyKwh": 31.22
+      },
+      {
+        "date": "2025-11-23",
+        "energyKwh": 30.12
+      },
+      {
+        "date": "2025-11-24",
+        "energyKwh": 27.29
+      },
+      {
+        "date": "2025-11-25",
+        "energyKwh": 39.03
+      },
+      {
+        "date": "2025-11-26",
+        "energyKwh": 29.59
+      },
+      {
+        "date": "2025-11-27",
+        "energyKwh": 28.95
+      },
+      {
+        "date": "2025-11-28",
+        "energyKwh": 41.0
+      },
+      {
+        "date": "2025-11-29",
+        "energyKwh": 24.96
+      },
+      {
+        "date": "2025-11-30",
+        "energyKwh": 36.47
+      },
+      {
+        "date": "2025-12-01",
+        "energyKwh": 35.89
+      },
+      {
+        "date": "2025-12-02",
+        "energyKwh": 33.76
+      },
+      {
+        "date": "2025-12-03",
+        "energyKwh": 35.42
+      },
+      {
+        "date": "2025-12-04",
+        "energyKwh": 26.29
+      },
+      {
+        "date": "2025-12-05",
+        "energyKwh": 38.6
+      },
+      {
+        "date": "2025-12-06",
+        "energyKwh": 27.34
+      },
+      {
+        "date": "2025-12-07",
+        "energyKwh": 38.96
+      },
+      {
+        "date": "2025-12-08",
+        "energyKwh": 24.68
+      },
+      {
+        "date": "2025-12-09",
+        "energyKwh": 25.37
+      },
+      {
+        "date": "2025-12-10",
+        "energyKwh": 28.44
+      },
+      {
+        "date": "2025-12-11",
+        "energyKwh": 36.93
+      },
+      {
+        "date": "2025-12-12",
+        "energyKwh": 26.83
+      },
+      {
+        "date": "2025-12-13",
+        "energyKwh": 41.74
+      },
+      {
+        "date": "2025-12-14",
+        "energyKwh": 33.7
+      },
+      {
+        "date": "2025-12-15",
+        "energyKwh": 36.75
+      },
+      {
+        "date": "2025-12-16",
+        "energyKwh": 31.47
+      },
+      {
+        "date": "2025-12-17",
+        "energyKwh": 29.07
+      },
+      {
+        "date": "2025-12-18",
+        "energyKwh": 30.82
+      },
+      {
+        "date": "2025-12-19",
+        "energyKwh": 41.57
+      },
+      {
+        "date": "2025-12-20",
+        "energyKwh": 35.17
+      },
+      {
+        "date": "2025-12-21",
+        "energyKwh": 35.26
+      },
+      {
+        "date": "2025-12-22",
+        "energyKwh": 23.61
+      },
+      {
+        "date": "2025-12-23",
+        "energyKwh": 33.07
+      },
+      {
+        "date": "2025-12-24",
+        "energyKwh": 31.43
+      },
+      {
+        "date": "2025-12-25",
+        "energyKwh": 31.14
+      },
+      {
+        "date": "2025-12-26",
+        "energyKwh": 25.63
+      },
+      {
+        "date": "2025-12-27",
+        "energyKwh": 31.44
+      },
+      {
+        "date": "2025-12-28",
+        "energyKwh": 34.48
+      },
+      {
+        "date": "2025-12-29",
+        "energyKwh": 38.85
+      },
+      {
+        "date": "2025-12-30",
+        "energyKwh": 27.08
+      },
+      {
+        "date": "2025-12-31",
+        "energyKwh": 28.09
+      },
+      {
+        "date": "2026-01-01",
+        "energyKwh": 35.86
+      },
+      {
+        "date": "2026-01-02",
+        "energyKwh": 29.83
+      },
+      {
+        "date": "2026-01-03",
+        "energyKwh": 40.27
+      },
+      {
+        "date": "2026-01-04",
+        "energyKwh": 24.91
+      },
+      {
+        "date": "2026-01-05",
+        "energyKwh": 32.14
+      },
+      {
+        "date": "2026-01-06",
+        "energyKwh": 25.68
+      },
+      {
+        "date": "2026-01-07",
+        "energyKwh": 32.63
+      },
+      {
+        "date": "2026-01-08",
+        "energyKwh": 28.42
+      },
+      {
+        "date": "2026-01-09",
+        "energyKwh": 37.44
+      },
+      {
+        "date": "2026-01-10",
+        "energyKwh": 35.09
+      },
+      {
+        "date": "2026-01-11",
+        "energyKwh": 33.7
+      },
+      {
+        "date": "2026-01-12",
+        "energyKwh": 36.46
+      },
+      {
+        "date": "2026-01-13",
+        "energyKwh": 36.26
+      },
+      {
+        "date": "2026-01-14",
+        "energyKwh": 40.56
+      },
+      {
+        "date": "2026-01-15",
+        "energyKwh": 28.0
+      },
+      {
+        "date": "2026-01-16",
+        "energyKwh": 41.01
+      },
+      {
+        "date": "2026-01-17",
+        "energyKwh": 31.05
+      },
+      {
+        "date": "2026-01-18",
+        "energyKwh": 40.01
+      },
+      {
+        "date": "2026-01-19",
+        "energyKwh": 27.61
+      },
+      {
+        "date": "2026-01-20",
+        "energyKwh": 41.24
+      },
+      {
+        "date": "2026-01-21",
+        "energyKwh": 39.04
+      },
+      {
+        "date": "2026-01-22",
+        "energyKwh": 41.66
+      },
+      {
+        "date": "2026-01-23",
+        "energyKwh": 27.11
+      },
+      {
+        "date": "2026-01-24",
+        "energyKwh": 27.17
+      },
+      {
+        "date": "2026-01-25",
+        "energyKwh": 28.81
+      },
+      {
+        "date": "2026-01-26",
+        "energyKwh": 25.74
+      },
+      {
+        "date": "2026-01-27",
+        "energyKwh": 42.61
+      },
+      {
+        "date": "2026-01-28",
+        "energyKwh": 27.73
+      },
+      {
+        "date": "2026-01-29",
+        "energyKwh": 32.36
+      },
+      {
+        "date": "2026-01-30",
+        "energyKwh": 24.5
+      },
+      {
+        "date": "2026-01-31",
+        "energyKwh": 33.31
+      },
+      {
+        "date": "2026-02-01",
+        "energyKwh": 35.45
+      },
+      {
+        "date": "2026-02-02",
+        "energyKwh": 27.23
+      },
+      {
+        "date": "2026-02-03",
+        "energyKwh": 34.3
+      },
+      {
+        "date": "2026-02-04",
+        "energyKwh": 40.6
+      },
+      {
+        "date": "2026-02-05",
+        "energyKwh": 28.14
+      },
+      {
+        "date": "2026-02-06",
+        "energyKwh": 41.77
+      },
+      {
+        "date": "2026-02-07",
+        "energyKwh": 28.86
+      },
+      {
+        "date": "2026-02-08",
+        "energyKwh": 41.23
+      },
+      {
+        "date": "2026-02-09",
+        "energyKwh": 31.44
+      },
+      {
+        "date": "2026-02-10",
+        "energyKwh": 23.47
+      },
+      {
+        "date": "2026-02-11",
+        "energyKwh": 38.63
+      },
+      {
+        "date": "2026-02-12",
+        "energyKwh": 30.02
+      },
+      {
+        "date": "2026-02-13",
+        "energyKwh": 42.34
+      },
+      {
+        "date": "2026-02-14",
+        "energyKwh": 38.84
+      },
+      {
+        "date": "2026-02-15",
+        "energyKwh": 26.18
+      },
+      {
+        "date": "2026-02-16",
+        "energyKwh": 39.39
+      },
+      {
+        "date": "2026-02-17",
+        "energyKwh": 26.79
+      },
+      {
+        "date": "2026-02-18",
+        "energyKwh": 32.27
+      },
+      {
+        "date": "2026-02-19",
+        "energyKwh": 30.19
+      },
+      {
+        "date": "2026-02-20",
+        "energyKwh": 38.57
+      },
+      {
+        "date": "2026-02-21",
+        "energyKwh": 27.18
+      },
+      {
+        "date": "2026-02-22",
+        "energyKwh": 24.57
+      },
+      {
+        "date": "2026-02-23",
+        "energyKwh": 37.34
+      },
+      {
+        "date": "2026-02-24",
+        "energyKwh": 37.38
+      },
+      {
+        "date": "2026-02-25",
+        "energyKwh": 29.13
+      },
+      {
+        "date": "2026-02-26",
+        "energyKwh": 37.55
+      },
+      {
+        "date": "2026-02-27",
+        "energyKwh": 40.61
+      },
+      {
+        "date": "2026-02-28",
+        "energyKwh": 40.63
+      },
+      {
+        "date": "2026-03-01",
+        "energyKwh": 30.67
+      },
+      {
+        "date": "2026-03-02",
+        "energyKwh": 33.98
+      },
+      {
+        "date": "2026-03-03",
+        "energyKwh": 35.22
+      },
+      {
+        "date": "2026-03-04",
+        "energyKwh": 37.81
+      },
+      {
+        "date": "2026-03-05",
+        "energyKwh": 26.76
+      },
+      {
+        "date": "2026-03-06",
+        "energyKwh": 37.81
+      },
+      {
+        "date": "2026-03-07",
+        "energyKwh": 34.01
+      },
+      {
+        "date": "2026-03-08",
+        "energyKwh": 41.35
+      },
+      {
+        "date": "2026-03-09",
+        "energyKwh": 35.92
+      },
+      {
+        "date": "2026-03-10",
+        "energyKwh": 23.5
+      },
+      {
+        "date": "2026-03-11",
+        "energyKwh": 26.81
+      },
+      {
+        "date": "2026-03-12",
+        "energyKwh": 31.92
+      },
+      {
+        "date": "2026-03-13",
+        "energyKwh": 30.15
+      },
+      {
+        "date": "2026-03-14",
+        "energyKwh": 41.19
+      },
+      {
+        "date": "2026-03-15",
+        "energyKwh": 26.62
+      },
+      {
+        "date": "2026-03-16",
+        "energyKwh": 35.85
+      },
+      {
+        "date": "2026-03-17",
+        "energyKwh": 42.44
+      },
+      {
+        "date": "2026-03-18",
+        "energyKwh": 39.97
+      },
+      {
+        "date": "2026-03-19",
+        "energyKwh": 38.41
+      },
+      {
+        "date": "2026-03-20",
+        "energyKwh": 27.94
+      },
+      {
+        "date": "2026-03-21",
+        "energyKwh": 38.78
+      },
+      {
+        "date": "2026-03-22",
+        "energyKwh": 34.27
+      },
+      {
+        "date": "2026-03-23",
+        "energyKwh": 34.1
+      },
+      {
+        "date": "2026-03-24",
+        "energyKwh": 33.86
+      },
+      {
+        "date": "2026-03-25",
+        "energyKwh": 32.09
+      },
+      {
+        "date": "2026-03-26",
+        "energyKwh": 25.19
+      },
+      {
+        "date": "2026-03-27",
+        "energyKwh": 29.45
+      },
+      {
+        "date": "2026-03-28",
+        "energyKwh": 31.88
+      },
+      {
+        "date": "2026-03-29",
+        "energyKwh": 31.37
+      },
+      {
+        "date": "2026-03-30",
+        "energyKwh": 24.23
+      },
+      {
+        "date": "2026-03-31",
+        "energyKwh": 35.36
+      },
+      {
+        "date": "2026-04-01",
+        "energyKwh": 35.87
+      },
+      {
+        "date": "2026-04-02",
+        "energyKwh": 26.77
+      },
+      {
+        "date": "2026-04-03",
+        "energyKwh": 39.98
+      },
+      {
+        "date": "2026-04-04",
+        "energyKwh": 38.27
+      },
+      {
+        "date": "2026-04-05",
+        "energyKwh": 25.03
+      },
+      {
+        "date": "2026-04-06",
+        "energyKwh": 36.97
+      },
+      {
+        "date": "2026-04-07",
+        "energyKwh": 41.23
+      },
+      {
+        "date": "2026-04-08",
+        "energyKwh": 29.78
+      },
+      {
+        "date": "2026-04-09",
+        "energyKwh": 35.56
+      },
+      {
+        "date": "2026-04-10",
+        "energyKwh": 39.74
+      },
+      {
+        "date": "2026-04-11",
+        "energyKwh": 26.74
+      },
+      {
+        "date": "2026-04-12",
+        "energyKwh": 32.39
+      },
+      {
+        "date": "2026-04-13",
+        "energyKwh": 29.23
+      },
+      {
+        "date": "2026-04-14",
+        "energyKwh": 39.93
+      },
+      {
+        "date": "2026-04-15",
+        "energyKwh": 25.08
+      },
+      {
+        "date": "2026-04-16",
+        "energyKwh": 39.72
+      },
+      {
+        "date": "2026-04-17",
+        "energyKwh": 28.33
+      },
+      {
+        "date": "2026-04-18",
+        "energyKwh": 41.62
+      },
+      {
+        "date": "2026-04-19",
+        "energyKwh": 41.28
+      },
+      {
+        "date": "2026-04-20",
+        "energyKwh": 25.2
+      },
+      {
+        "date": "2026-04-21",
+        "energyKwh": 31.32
+      },
+      {
+        "date": "2026-04-22",
+        "energyKwh": 32.17
+      },
+      {
+        "date": "2026-04-23",
+        "energyKwh": 40.83
+      },
+      {
+        "date": "2026-04-24",
+        "energyKwh": 36.49
+      },
+      {
+        "date": "2026-04-25",
+        "energyKwh": 40.38
+      },
+      {
+        "date": "2026-04-26",
+        "energyKwh": 29.39
+      },
+      {
+        "date": "2026-04-27",
+        "energyKwh": 41.25
+      },
+      {
+        "date": "2026-04-28",
+        "energyKwh": 36.01
+      },
+      {
+        "date": "2026-04-29",
+        "energyKwh": 34.95
+      },
+      {
+        "date": "2026-04-30",
+        "energyKwh": 32.41
+      },
+      {
+        "date": "2026-05-01",
+        "energyKwh": 39.17
+      },
+      {
+        "date": "2026-05-02",
+        "energyKwh": 37.85
+      },
+      {
+        "date": "2026-05-03",
+        "energyKwh": 36.03
+      },
+      {
+        "date": "2026-05-04",
+        "energyKwh": 41.28
+      },
+      {
+        "date": "2026-05-05",
+        "energyKwh": 39.65
+      },
+      {
+        "date": "2026-05-06",
+        "energyKwh": 39.91
+      },
+      {
+        "date": "2026-05-07",
+        "energyKwh": 26.12
+      },
+      {
+        "date": "2026-05-08",
+        "energyKwh": 37.72
+      },
+      {
+        "date": "2026-05-09",
+        "energyKwh": 37.64
+      },
+      {
+        "date": "2026-05-10",
+        "energyKwh": 36.03
+      },
+      {
+        "date": "2026-05-11",
+        "energyKwh": 38.53
+      },
+      {
+        "date": "2026-05-12",
+        "energyKwh": 38.15
+      },
+      {
+        "date": "2026-05-13",
+        "energyKwh": 35.65
+      },
+      {
+        "date": "2026-05-14",
+        "energyKwh": 27.07
+      },
+      {
+        "date": "2026-05-15",
+        "energyKwh": 29.54
+      },
+      {
+        "date": "2026-05-16",
+        "energyKwh": 33.34
+      },
+      {
+        "date": "2026-05-17",
+        "energyKwh": 33.42
+      },
+      {
+        "date": "2026-05-18",
+        "energyKwh": 31.93
+      },
+      {
+        "date": "2026-05-19",
+        "energyKwh": 37.77
+      },
+      {
+        "date": "2026-05-20",
+        "energyKwh": 26.69
+      },
+      {
+        "date": "2026-05-21",
+        "energyKwh": 26.73
+      },
+      {
+        "date": "2026-05-22",
+        "energyKwh": 38.57
+      },
+      {
+        "date": "2026-05-23",
+        "energyKwh": 35.78
+      },
+      {
+        "date": "2026-05-24",
+        "energyKwh": 41.81
+      },
+      {
+        "date": "2026-05-25",
+        "energyKwh": 28.36
+      },
+      {
+        "date": "2026-05-26",
+        "energyKwh": 33.02
+      },
+      {
+        "date": "2026-05-27",
+        "energyKwh": 37.52
+      },
+      {
+        "date": "2026-05-28",
+        "energyKwh": 26.1
+      },
+      {
+        "date": "2026-05-29",
+        "energyKwh": 27.26
+      },
+      {
+        "date": "2026-05-30",
+        "energyKwh": 29.74
+      },
+      {
+        "date": "2026-05-31",
+        "energyKwh": 42.01
+      },
+      {
+        "date": "2026-06-01",
+        "energyKwh": 23.9
+      },
+      {
+        "date": "2026-06-02",
+        "energyKwh": 28.79
+      },
+      {
+        "date": "2026-06-03",
+        "energyKwh": 41.99
+      },
+      {
+        "date": "2026-06-04",
+        "energyKwh": 41.7
+      },
+      {
+        "date": "2026-06-05",
+        "energyKwh": 41.18
+      },
+      {
+        "date": "2026-06-06",
+        "energyKwh": 26.1
+      },
+      {
+        "date": "2026-06-07",
+        "energyKwh": 34.96
+      },
+      {
+        "date": "2026-06-08",
+        "energyKwh": 39.45
+      },
+      {
+        "date": "2026-06-09",
+        "energyKwh": 38.35
+      },
+      {
+        "date": "2026-06-10",
+        "energyKwh": 29.84
+      },
+      {
+        "date": "2026-06-11",
+        "energyKwh": 34.43
+      },
+      {
+        "date": "2026-06-12",
+        "energyKwh": 35.03
+      },
+      {
+        "date": "2026-06-13",
+        "energyKwh": 34.46
+      },
+      {
+        "date": "2026-06-14",
+        "energyKwh": 37.09
+      },
+      {
+        "date": "2026-06-15",
+        "energyKwh": 29.47
+      },
+      {
+        "date": "2026-06-16",
+        "energyKwh": 28.71
+      },
+      {
+        "date": "2026-06-17",
+        "energyKwh": 35.52
+      },
+      {
+        "date": "2026-06-18",
+        "energyKwh": 43.28
+      },
+      {
+        "date": "2026-06-19",
+        "energyKwh": 42.02
+      },
+      {
+        "date": "2026-06-20",
+        "energyKwh": 40.36
+      },
+      {
+        "date": "2026-06-21",
+        "energyKwh": 34.37
+      },
+      {
+        "date": "2026-06-22",
+        "energyKwh": 36.31
+      },
+      {
+        "date": "2026-06-23",
+        "energyKwh": 41.87
+      },
+      {
+        "date": "2026-06-24",
+        "energyKwh": 31.97
+      },
+      {
+        "date": "2026-06-25",
+        "energyKwh": 25.07
+      },
+      {
+        "date": "2026-06-26",
+        "energyKwh": 25.58
+      },
+      {
+        "date": "2026-06-27",
+        "energyKwh": 39.7
+      },
+      {
+        "date": "2026-06-28",
+        "energyKwh": 40.91
+      },
+      {
+        "date": "2026-06-29",
+        "energyKwh": 36.95
+      },
+      {
+        "date": "2026-06-30",
+        "energyKwh": 27.01
+      },
+      {
+        "date": "2026-07-01",
+        "energyKwh": 29.93
+      },
+      {
+        "date": "2026-07-02",
+        "energyKwh": 39.17
+      },
+      {
+        "date": "2026-07-03",
+        "energyKwh": 39.83
+      },
+      {
+        "date": "2026-07-04",
+        "energyKwh": 25.78
+      },
+      {
+        "date": "2026-07-05",
+        "energyKwh": 39.79
+      },
+      {
+        "date": "2026-07-06",
+        "energyKwh": 29.29
+      },
+      {
+        "date": "2026-07-07",
+        "energyKwh": 39.66
+      },
+      {
+        "date": "2026-07-08",
+        "energyKwh": 37.3
+      },
+      {
+        "date": "2026-07-09",
+        "energyKwh": 27.87
+      },
+      {
+        "date": "2026-07-10",
+        "energyKwh": 27.53
+      },
+      {
+        "date": "2026-07-11",
+        "energyKwh": 24.44
+      },
+      {
+        "date": "2026-07-12",
+        "energyKwh": 25.1
+      },
+      {
+        "date": "2026-07-13",
+        "energyKwh": 28.15
+      },
+      {
+        "date": "2026-07-14",
+        "energyKwh": 39.33
+      },
+      {
+        "date": "2026-07-15",
+        "energyKwh": 38.35
+      },
+      {
+        "date": "2026-07-16",
+        "energyKwh": 24.4
+      },
+      {
+        "date": "2026-07-17",
+        "energyKwh": 30.94
+      },
+      {
+        "date": "2026-07-18",
+        "energyKwh": 23.92
+      },
+      {
+        "date": "2026-07-19",
+        "energyKwh": 27.23
+      },
+      {
+        "date": "2026-07-20",
+        "energyKwh": 25.28
+      },
+      {
+        "date": "2026-07-21",
+        "energyKwh": 41.5
+      },
+      {
+        "date": "2026-07-22",
+        "energyKwh": 31.05
+      },
+      {
+        "date": "2026-07-23",
+        "energyKwh": 36.89
+      },
+      {
+        "date": "2026-07-24",
+        "energyKwh": 34.31
+      },
+      {
+        "date": "2026-07-25",
+        "energyKwh": 37.3
+      },
+      {
+        "date": "2026-07-26",
+        "energyKwh": 27.09
+      },
+      {
+        "date": "2026-07-27",
+        "energyKwh": 24.82
+      },
+      {
+        "date": "2026-07-28",
+        "energyKwh": 39.09
+      },
+      {
+        "date": "2026-07-29",
+        "energyKwh": 42.48
+      },
+      {
+        "date": "2026-07-30",
+        "energyKwh": 37.55
+      },
+      {
+        "date": "2026-07-31",
+        "energyKwh": 39.64
+      },
+      {
+        "date": "2026-08-01",
+        "energyKwh": 31.4
+      },
+      {
+        "date": "2026-08-02",
+        "energyKwh": 26.77
+      },
+      {
+        "date": "2026-08-03",
+        "energyKwh": 27.52
+      },
+      {
+        "date": "2026-08-04",
+        "energyKwh": 25.92
+      },
+      {
+        "date": "2026-08-05",
+        "energyKwh": 26.37
+      },
+      {
+        "date": "2026-08-06",
+        "energyKwh": 37.55
+      },
+      {
+        "date": "2026-08-07",
+        "energyKwh": 42.49
+      },
+      {
+        "date": "2026-08-08",
+        "energyKwh": 35.08
+      },
+      {
+        "date": "2026-08-09",
+        "energyKwh": 34.82
+      },
+      {
+        "date": "2026-08-10",
+        "energyKwh": 40.59
+      },
+      {
+        "date": "2026-08-11",
+        "energyKwh": 39.3
+      },
+      {
+        "date": "2026-08-12",
+        "energyKwh": 28.67
+      },
+      {
+        "date": "2026-08-13",
+        "energyKwh": 25.79
+      },
+      {
+        "date": "2026-08-14",
+        "energyKwh": 24.05
+      },
+      {
+        "date": "2026-08-15",
+        "energyKwh": 25.24
+      },
+      {
+        "date": "2026-08-16",
+        "energyKwh": 27.27
+      },
+      {
+        "date": "2026-08-17",
+        "energyKwh": 40.49
+      },
+      {
+        "date": "2026-08-18",
+        "energyKwh": 34.56
+      },
+      {
+        "date": "2026-08-19",
+        "energyKwh": 29.45
+      },
+      {
+        "date": "2026-08-20",
+        "energyKwh": 30.65
+      },
+      {
+        "date": "2026-08-21",
+        "energyKwh": 28.65
+      },
+      {
+        "date": "2026-08-22",
+        "energyKwh": 33.7
+      },
+      {
+        "date": "2026-08-23",
+        "energyKwh": 36.14
+      },
+      {
+        "date": "2026-08-24",
+        "energyKwh": 28.43
+      },
+      {
+        "date": "2026-08-25",
+        "energyKwh": 26.95
+      },
+      {
+        "date": "2026-08-26",
+        "energyKwh": 26.03
+      },
+      {
+        "date": "2026-08-27",
+        "energyKwh": 41.45
+      },
+      {
+        "date": "2026-08-28",
+        "energyKwh": 36.64
+      },
+      {
+        "date": "2026-08-29",
+        "energyKwh": 24.32
+      },
+      {
+        "date": "2026-08-30",
+        "energyKwh": 38.86
+      },
+      {
+        "date": "2026-08-31",
+        "energyKwh": 31.25
+      },
+      {
+        "date": "2026-09-01",
+        "energyKwh": 41.14
+      },
+      {
+        "date": "2026-09-02",
+        "energyKwh": 36.71
+      },
+      {
+        "date": "2026-09-03",
+        "energyKwh": 37.15
+      },
+      {
+        "date": "2026-09-04",
+        "energyKwh": 27.55
+      },
+      {
+        "date": "2026-09-05",
+        "energyKwh": 28.96
+      },
+      {
+        "date": "2026-09-06",
+        "energyKwh": 41.38
+      },
+      {
+        "date": "2026-09-07",
+        "energyKwh": 30.05
+      },
+      {
+        "date": "2026-09-08",
+        "energyKwh": 35.56
+      },
+      {
+        "date": "2026-09-09",
+        "energyKwh": 37.01
+      },
+      {
+        "date": "2026-09-10",
+        "energyKwh": 33.72
+      },
+      {
+        "date": "2026-09-11",
+        "energyKwh": 31.02
+      },
+      {
+        "date": "2026-09-12",
+        "energyKwh": 40.1
+      },
+      {
+        "date": "2026-09-13",
+        "energyKwh": 41.55
+      },
+      {
+        "date": "2026-09-14",
+        "energyKwh": 39.93
+      },
+      {
+        "date": "2026-09-15",
+        "energyKwh": 36.37
+      },
+      {
+        "date": "2026-09-16",
+        "energyKwh": 31.83
+      },
+      {
+        "date": "2026-09-17",
+        "energyKwh": 24.69
+      },
+      {
+        "date": "2026-09-18",
+        "energyKwh": 41.71
+      },
+      {
+        "date": "2026-09-19",
+        "energyKwh": 41.41
+      },
+      {
+        "date": "2026-09-20",
+        "energyKwh": 36.97
+      },
+      {
+        "date": "2026-09-21",
+        "energyKwh": 23.28
+      },
+      {
+        "date": "2026-09-22",
+        "energyKwh": 31.61
+      },
+      {
+        "date": "2026-09-23",
+        "energyKwh": 38.73
+      },
+      {
+        "date": "2026-09-24",
+        "energyKwh": 38.01
+      },
+      {
+        "date": "2026-09-25",
+        "energyKwh": 35.94
+      },
+      {
+        "date": "2026-09-26",
+        "energyKwh": 39.68
+      },
+      {
+        "date": "2026-09-27",
+        "energyKwh": 38.38
+      },
+      {
+        "date": "2026-09-28",
+        "energyKwh": 25.42
+      },
+      {
+        "date": "2026-09-29",
+        "energyKwh": 27.9
+      },
+      {
+        "date": "2026-09-30",
+        "energyKwh": 31.03
+      },
+      {
+        "date": "2026-10-01",
+        "energyKwh": 31.26
+      },
+      {
+        "date": "2026-10-02",
+        "energyKwh": 41.54
+      },
+      {
+        "date": "2026-10-03",
+        "energyKwh": 24.89
+      },
+      {
+        "date": "2026-10-04",
+        "energyKwh": 37.96
+      },
+      {
+        "date": "2026-10-05",
+        "energyKwh": 26.93
+      },
+      {
+        "date": "2026-10-06",
+        "energyKwh": 34.06
+      },
+      {
+        "date": "2026-10-07",
+        "energyKwh": 26.58
+      },
+      {
+        "date": "2026-10-08",
+        "energyKwh": 36.21
+      },
+      {
+        "date": "2026-10-09",
+        "energyKwh": 23.82
+      },
+      {
+        "date": "2026-10-10",
+        "energyKwh": 30.8
+      },
+      {
+        "date": "2026-10-11",
+        "energyKwh": 37.4
+      },
+      {
+        "date": "2026-10-12",
+        "energyKwh": 27.3
+      }
+    ]
+  }
+]
