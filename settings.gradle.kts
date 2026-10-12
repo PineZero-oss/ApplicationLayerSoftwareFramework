@@ -24,3 +24,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "Application-Layer-Software-Framework-for-Solar-Powered-IoT-Systems"
 include(":app")
+
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven("https://jitpack.io")
+    }
+}
