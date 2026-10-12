@@ -4,6 +4,7 @@ import math
 import random
 from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
+from weekly_energy_summary import calculate_weekly_summary
 
 
 OUTPUT_DIR = Path("data")
@@ -100,12 +101,28 @@ def main() -> None:
     save_json(readings)
     save_csv(readings)
 
+    summary = calculate_weekly_summary(readings)
+
+    summary_output = (
+        OUTPUT_DIR / "weekly_energy_summary.json"
+    )
+
+    with summary_output.open(
+        "w",
+        encoding="utf-8",
+    ) as file:
+        json.dump(summary, file, indent=2)
+
     print(f"Generated {len(readings)} simulated readings.")
     print(f"JSON: {JSON_OUTPUT}")
     print(f"CSV:  {CSV_OUTPUT}")
+    print(f"Weekly summary saved to: {summary_output}")
     print()
     print("First 5 readings:")
     print(json.dumps(readings[:5], indent=2))
+    print()
+    print("Weekly energy summary:")
+    print(json.dumps(summary, indent=2))
 
 
 if __name__ == "__main__":

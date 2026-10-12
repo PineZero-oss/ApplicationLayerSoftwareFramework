@@ -1,0 +1,43 @@
+{
+  "deviceId": "solar-array-01",
+  "periodStart": "2026-10-06",
+  "periodEnd": "2026-10-12",
+  "dataSource": "SIMULATED",
+  "unit": "kWh",
+  "totalEnergyKwh": 221.63,
+  "averageDailyEnergyKwh": 31.66,
+  "bestDay": {
+    "date": "2026-10-12",
+    "energyKwh": 41.31
+  },
+  "dailyTotals": [
+    {
+      "date": "2026-10-06",
+      "energyKwh": 36.45
+    },
+    {
+      "date": "2026-10-07",
+      "energyKwh": 32.66
+    },
+    {
+      "date": "2026-10-08",
+      "energyKwh": 28.53
+    },
+    {
+      "date": "2026-10-09",
+      "energyKwh": 30.86
+    },
+    {
+      "date": "2026-10-10",
+      "energyKwh": 25.05
+    },
+    {
+      "date": "2026-10-11",
+      "energyKwh": 26.77
+    },
+    {
+      "date": "2026-10-12",
+      "energyKwh": 41.31
+    }
+  ]
+}
