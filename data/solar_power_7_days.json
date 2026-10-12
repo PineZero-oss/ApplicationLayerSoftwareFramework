@@ -1,0 +1,639 @@
+[
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T06:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T07:00:00+02:00",
+    "powerKw": 1.29,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T08:00:00+02:00",
+    "powerKw": 2.42,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T09:00:00+02:00",
+    "powerKw": 3.18,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T10:00:00+02:00",
+    "powerKw": 4.18,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T11:00:00+02:00",
+    "powerKw": 4.73,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T12:00:00+02:00",
+    "powerKw": 4.95,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T13:00:00+02:00",
+    "powerKw": 4.35,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T14:00:00+02:00",
+    "powerKw": 4.09,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T15:00:00+02:00",
+    "powerKw": 3.34,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T16:00:00+02:00",
+    "powerKw": 2.25,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T17:00:00+02:00",
+    "powerKw": 1.14,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-06T18:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T06:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T07:00:00+02:00",
+    "powerKw": 1.12,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T08:00:00+02:00",
+    "powerKw": 2.18,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T09:00:00+02:00",
+    "powerKw": 3.13,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T10:00:00+02:00",
+    "powerKw": 4.06,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T11:00:00+02:00",
+    "powerKw": 4.31,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T12:00:00+02:00",
+    "powerKw": 4.27,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T13:00:00+02:00",
+    "powerKw": 4.16,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T14:00:00+02:00",
+    "powerKw": 4.09,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T15:00:00+02:00",
+    "powerKw": 3.01,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T16:00:00+02:00",
+    "powerKw": 2.39,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T17:00:00+02:00",
+    "powerKw": 1.13,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-07T18:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T06:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T07:00:00+02:00",
+    "powerKw": 1.02,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T08:00:00+02:00",
+    "powerKw": 2.09,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T09:00:00+02:00",
+    "powerKw": 2.95,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T10:00:00+02:00",
+    "powerKw": 3.33,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T11:00:00+02:00",
+    "powerKw": 3.92,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T12:00:00+02:00",
+    "powerKw": 3.82,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T13:00:00+02:00",
+    "powerKw": 3.74,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T14:00:00+02:00",
+    "powerKw": 3.36,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T15:00:00+02:00",
+    "powerKw": 2.78,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T16:00:00+02:00",
+    "powerKw": 1.96,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T17:00:00+02:00",
+    "powerKw": 1.07,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-08T18:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T06:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T07:00:00+02:00",
+    "powerKw": 1.09,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T08:00:00+02:00",
+    "powerKw": 2.11,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T09:00:00+02:00",
+    "powerKw": 3.22,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T10:00:00+02:00",
+    "powerKw": 3.82,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T11:00:00+02:00",
+    "powerKw": 4.23,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T12:00:00+02:00",
+    "powerKw": 4.37,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T13:00:00+02:00",
+    "powerKw": 4.25,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T14:00:00+02:00",
+    "powerKw": 3.84,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T15:00:00+02:00",
+    "powerKw": 3.27,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T16:00:00+02:00",
+    "powerKw": 2.2,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T17:00:00+02:00",
+    "powerKw": 1.21,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-09T18:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T06:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T07:00:00+02:00",
+    "powerKw": 0.83,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T08:00:00+02:00",
+    "powerKw": 1.62,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T09:00:00+02:00",
+    "powerKw": 2.26,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T10:00:00+02:00",
+    "powerKw": 2.6,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T11:00:00+02:00",
+    "powerKw": 3.19,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T12:00:00+02:00",
+    "powerKw": 3.32,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T13:00:00+02:00",
+    "powerKw": 3.16,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T14:00:00+02:00",
+    "powerKw": 2.85,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T15:00:00+02:00",
+    "powerKw": 2.38,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T16:00:00+02:00",
+    "powerKw": 1.52,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T17:00:00+02:00",
+    "powerKw": 0.85,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-10T18:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T06:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T07:00:00+02:00",
+    "powerKw": 1.19,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T08:00:00+02:00",
+    "powerKw": 2.21,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T09:00:00+02:00",
+    "powerKw": 3.2,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T10:00:00+02:00",
+    "powerKw": 4.05,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T11:00:00+02:00",
+    "powerKw": 4.01,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T12:00:00+02:00",
+    "powerKw": 4.15,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T13:00:00+02:00",
+    "powerKw": 4.44,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T14:00:00+02:00",
+    "powerKw": 3.8,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T15:00:00+02:00",
+    "powerKw": 3.31,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T16:00:00+02:00",
+    "powerKw": 2.28,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T17:00:00+02:00",
+    "powerKw": 1.12,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-11T18:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T06:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T07:00:00+02:00",
+    "powerKw": 0.79,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T08:00:00+02:00",
+    "powerKw": 1.61,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T09:00:00+02:00",
+    "powerKw": 2.25,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T10:00:00+02:00",
+    "powerKw": 2.86,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T11:00:00+02:00",
+    "powerKw": 2.99,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T12:00:00+02:00",
+    "powerKw": 3.04,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T13:00:00+02:00",
+    "powerKw": 3.05,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T14:00:00+02:00",
+    "powerKw": 2.77,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T15:00:00+02:00",
+    "powerKw": 2.29,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T16:00:00+02:00",
+    "powerKw": 1.5,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T17:00:00+02:00",
+    "powerKw": 0.83,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  },
+  {
+    "deviceId": "solar-array-01",
+    "timestamp": "2026-10-12T18:00:00+02:00",
+    "powerKw": 0.0,
+    "dataSource": "SIMULATED",
+    "simulationVersion": "1.0"
+  }
+]
