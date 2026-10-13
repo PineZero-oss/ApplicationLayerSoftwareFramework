@@ -35,10 +35,11 @@
     <string name="emailVerification_hint">X</string>
     <string name="emailVerification_resend">Resend Code</string>
     <string name="emailVerification_message_btn">Verify &amp; Continue</string>
-
-
-
-
+    <string name="usage_tab1">Day</string>
+    <string name="usage_tab2">Week</string>
+    <string name="usage_tab3">Month</string>
+    <string name="usage_heading">Consumption</string>
+    <string name="usage_subheading">Where your power goes</string>
 
 
 </resources>

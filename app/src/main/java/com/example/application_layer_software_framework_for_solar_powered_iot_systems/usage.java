@@ -2,11 +2,15 @@ package com.example.application_layer_software_framework_for_solar_powered_iot_s
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.android.material.appbar.MaterialToolbar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -60,5 +64,37 @@ public class usage extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_usage, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        MaterialToolbar toolbar = view.findViewById(R.id.toolbar_usage);
+        if (toolbar != null) {
+            // Load default sub-fragment when the view is created
+            if (savedInstanceState == null) {
+                getChildFragmentManager().beginTransaction().replace(R.id.usage_container, new daily_usage()).commit();
+            }
+            // Set a listener for item selection in the toolbar
+            toolbar.setOnMenuItemClickListener(item -> {
+                Fragment selectedFragment = null;
+                int id = item.getItemId();
+
+                if (id == R.id.usage_day) {
+                    selectedFragment = new daily_usage();
+                } else if (id == R.id.usage_week) {
+                    selectedFragment = new weekly_usage();
+                } else if (id == R.id.usage_month) {
+                    selectedFragment = new monthly_usage();
+                }
+                // Replace the current fragment with the selected sub-fragment
+                if (selectedFragment != null) {
+                    getChildFragmentManager().beginTransaction().replace(R.id.usage_container, selectedFragment).commit();
+                    return true;
+                }
+                return false;
+            });
+        }
     }
 }
