@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -13,12 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,23 +30,14 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link home#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class home extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
-    // Reading class to hold data from JSON
     public static class Reading {
         private String deviceId;
         private String timestamp;
@@ -65,15 +57,6 @@ public class home extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment home.
-     */
-    // TODO: Rename and change types and number of parameters
     public static home newInstance(String param1, String param2) {
         home fragment = new home();
         Bundle args = new Bundle();
@@ -95,7 +78,6 @@ public class home extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 
@@ -105,65 +87,60 @@ public class home extends Fragment {
         drawSummaryChart(view);
     }
 
-    // Drawing the summary chart
     private void drawSummaryChart(View view) {
         LineChart summaryChart = view.findViewById(R.id.summaryChart);
         if (summaryChart == null) return;
 
+        // Load readings and limit to 30 entries
+        List<Reading> allReadings = loadReadings(requireContext(), "monthlydata.json");
+        int readingLimit = Math.min(allReadings.size(), 30);
+        List<Reading> readings = allReadings.subList(0, readingLimit);
+
         // Configuring basic chart properties
-        summaryChart.setBackgroundColor(Color.parseColor("#EDD2E0"));
-        summaryChart.setDrawGridBackgroundEnabled(false);
-        summaryChart.getDescription().setEnabled(false);
-
-        //chart X-axis
-        XAxis xAxis = summaryChart.getXAxis();
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setTextColor(Color.BLACK);
-        xAxis.setDrawGridLinesEnabled(false);
-
-        //chart Y-axis
-        YAxis leftAxis = summaryChart.getAxisLeft();
-        leftAxis.setTextColor(Color.BLACK);
-        leftAxis.setDrawGridLinesEnabled(true);
+        summaryChart.getLegend().setEnabled(false);
         summaryChart.getAxisRight().setEnabled(false);
+        summaryChart.getDescription().setEnabled(false);
+        summaryChart.setExtraOffsets(12f, 16f, 12f, 8f);
 
-        //chart Legend
-        Legend legend = summaryChart.getLegend();
-        legend.setTextColor(Color.BLACK);
-        legend.setForm(Legend.LegendForm.LINE);
-
-
-
-        List<Reading> readings = loadReadings(requireContext(), "monthlydata.json");
+        List<String> labels = new ArrayList<>();
         ArrayList<Entry> entries = new ArrayList<>();
 
-        int readingLimit = Math.min(readings.size(), 31); // Limit to 31 readings
-        for (int i = 0; i < readingLimit; i++) {
+
+        // Populate labels and entries with data
+        for (int i = 0; i < readings.size(); i++) {
             Reading reading = readings.get(i);
-            Entry entry = new Entry((float) i, reading.getPowerKw(), null, null);
-            entries.add(entry);
+            String ts = reading.getTimestamp();
+            String formattedTime = (ts != null && ts.length() >= 16) ? ts.substring(11, 16) : (ts != null ? ts : ""); // Extract time part
+            labels.add(formattedTime);
+
+            entries.add(new Entry((float) i, reading.getPowerKw(), null, null));
         }
 
-        //chart data
-        LineDataSet dataSet = new LineDataSet(entries, "Power Consumption");
-        //chart styling
-        dataSet.setColor(Color.parseColor("#4CAF50"));
-        dataSet.setLineWidth(3f);
-        dataSet.setDrawCirclesEnabled(false);
-        dataSet.setFillColor(Color.parseColor("#DBABBE"));
-        dataSet.setDrawValuesEnabled(false);
-        dataSet.setDrawFilledEnabled(false);
-        dataSet.setDrawCircleHoleEnabled(false);
-        dataSet.setCircleRadius(5f);
+        // Chart X-axis with timestamp labels
+        XAxis xAxis = summaryChart.getXAxis();
+        xAxis.setDrawGridLinesEnabled(false);
+        xAxis.setGranularity(1f);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
 
+        // Chart Y-axis
+        YAxis ytAxis = summaryChart.getAxisLeft();
+        ytAxis.setAxisLineColor(Color.parseColor("#f1f1f1"));
+
+        // Chart data & styling
+        LineDataSet dataSet = new LineDataSet(entries, "Power Consumption");
+        dataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
+        dataSet.setDrawValuesEnabled(false);
+        dataSet.setDrawFilledEnabled(true);
+        dataSet.setFillDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.summarychart));
+        dataSet.setDrawCirclesEnabled(true);
+        dataSet.setLineWidth(2.5f);
 
         LineData lineData = new LineData(dataSet);
         summaryChart.setData(lineData);
         summaryChart.invalidate();
-
     }
 
-    // Load JSON from asset
     private String loadJSONFromAsset(Context context, String fileName) {
         try (InputStream is = context.getAssets().open(fileName)) {
             int size = is.available();
@@ -176,7 +153,6 @@ public class home extends Fragment {
         }
     }
 
-    // Load readings from JSON
     private List<Reading> loadReadings(Context context, String fileName) {
         List<Reading> readings = new ArrayList<>();
         String json = loadJSONFromAsset(context, fileName);
@@ -197,6 +173,4 @@ public class home extends Fragment {
         }
         return readings;
     }
-
-
 }

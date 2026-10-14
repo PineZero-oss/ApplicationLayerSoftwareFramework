@@ -36,8 +36,8 @@
 
            <ImageView
                android:id="@+id/home_menu_icon"
-               android:layout_width="51dp"
-               android:layout_height="50dp"
+               android:layout_width="60dp"
+               android:layout_height="44dp"
                android:background="?selectableItemBackground"
                android:clickable="true"
                android:contentDescription="Menu"
@@ -45,23 +45,31 @@
                android:src="@drawable/tn_home_menu"
                app:layout_constraintBottom_toBottomOf="parent"
                app:layout_constraintEnd_toEndOf="parent"
-               app:layout_constraintHorizontal_bias="0.805"
+               app:layout_constraintHorizontal_bias="0.876"
                app:layout_constraintStart_toEndOf="@+id/home_greeting"
                app:layout_constraintTop_toTopOf="parent"
-               app:layout_constraintVertical_bias="0.057" />
+               app:layout_constraintVertical_bias="0.056" />
 
-           <com.github.mikephil.charting.charts.LineChart
-               android:id="@+id/summaryChart"
-               android:layout_width="match_parent"
-               android:layout_height="300dp"
-               android:layout_marginTop="48dp"
-               android:layout_marginStart="16dp"
-               android:layout_marginEnd="16dp"
+           <androidx.cardview.widget.CardView
+               android:layout_width="394dp"
+               android:layout_height="250dp"
                app:layout_constraintBottom_toBottomOf="parent"
                app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.296"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/home_greeting"
-               app:layout_constraintVertical_bias="0.007" />
+               app:layout_constraintTop_toTopOf="parent"
+               app:cardCornerRadius="16dp"
+               android:elevation="4dp"
+               app:cardBackgroundColor="#F0F0F0"
+               app:layout_constraintVertical_bias="0.322">
+
+               <com.github.mikephil.charting.charts.LineChart
+                   android:id="@+id/summaryChart"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent" />
+
+           </androidx.cardview.widget.CardView>
+
 
        </androidx.constraintlayout.widget.ConstraintLayout>
 
