@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -20,6 +21,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -141,6 +143,21 @@ public class home extends Fragment {
         summaryChart.invalidate();
     }
 
+
+    public void updatePowerGauge(CircularProgressIndicator powerGauge, TextView watts, TextView device, String deviceID, float powerKw, float maxPower){
+
+        //converting our kilowatts into watts
+        float pWatts = powerKw * 1000f;
+
+        int progPercentage = (int)((powerKw / maxPower) * 100f);
+        progPercentage = Math.min(Math.max(progPercentage, 0), 100);
+
+        powerGauge.setProgress(progPercentage);
+        watts.setText(String.format("%.2f W", pWatts));
+        device.setText(deviceID);
+
+    }
+
     private String loadJSONFromAsset(Context context, String fileName) {
         try (InputStream is = context.getAssets().open(fileName)) {
             int size = is.available();
@@ -166,6 +183,19 @@ public class home extends Fragment {
                     reading.setTimestamp(obj.optString("timestamp"));
                     reading.setPowerKw((float) obj.optDouble("powerKw", 0.0));
                     readings.add(reading);
+                }
+
+                if(jsonArray.length() > 0) {
+                    JSONObject lastestjsonItem = jsonArray.getJSONObject(jsonArray.length() - 1);
+
+                    String deviceId = lastestjsonItem.optString("deviceId");
+                    float powerKw = (float) lastestjsonItem.optDouble("powerKw", 0.0);
+
+                    CircularProgressIndicator progBar = getView().findViewById(R.id.progress_bar);
+                    TextView pDeviceID = getView().findViewById(R.id.p_device_id);
+                    TextView powerGenerationValue = getView().findViewById(R.id.power_generation_value);
+
+                    updatePowerGauge(progBar, powerGenerationValue, pDeviceID, deviceId, powerKw, 5.0f);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
