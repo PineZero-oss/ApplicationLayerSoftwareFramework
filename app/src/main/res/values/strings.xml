@@ -41,6 +41,8 @@
     <string name="usage_heading">Consumption</string>
     <string name="usage_subheading">Where your power goes</string>
     <string name="home_power_generation_heading">Current power generation</string>
+    <string name="efficiency_heading">Efficiency</string>
+    <string name="efficiency_subheading">System Performance</string>
 
 
 </resources>
