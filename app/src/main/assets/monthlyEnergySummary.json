@@ -1,0 +1,60 @@
+[
+  {
+    "deviceId": "solar-array-01",
+    "periodStart": "2025-11",
+    "periodEnd": "2026-10",
+    "dataSource": "SIMULATED",
+    "unit": "kWh",
+    "monthlyTotals": [
+      {
+        "month": "2025-11",
+        "energyKwh": 1018.54
+      },
+      {
+        "month": "2025-12",
+        "energyKwh": 998.88
+      },
+      {
+        "month": "2026-01",
+        "energyKwh": 1028.21
+      },
+      {
+        "month": "2026-02",
+        "energyKwh": 950.1
+      },
+      {
+        "month": "2026-03",
+        "energyKwh": 1028.91
+      },
+      {
+        "month": "2026-04",
+        "energyKwh": 1033.92
+      },
+      {
+        "month": "2026-05",
+        "energyKwh": 1070.39
+      },
+      {
+        "month": "2026-06",
+        "energyKwh": 1046.37
+      },
+      {
+        "month": "2026-07",
+        "energyKwh": 1015.01
+      },
+      {
+        "month": "2026-08",
+        "energyKwh": 986.4
+      },
+      {
+        "month": "2026-09",
+        "energyKwh": 1044.79
+      },
+      {
+        "month": "2026-10",
+        "energyKwh": 378.75
+      }
+    ]
+  }
+]
+

@@ -40,6 +40,9 @@
     <string name="usage_tab3">Month</string>
     <string name="usage_heading">Consumption</string>
     <string name="usage_subheading">Where your power goes</string>
+    <string name="daily_usage_heading">Daily Usage</string>
+    <string name="weekly_usage_heading">Weekly Usage</string>
+    <string name="monthly_usage_heading">Monthly Usage</string>
     <string name="home_power_generation_heading">Current power generation</string>
     <string name="efficiency_heading">Efficiency</string>
     <string name="efficiency_subheading">System Performance</string>
