@@ -5,17 +5,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/account_creation_bg"
     android:padding="32dp">
 
 
 
     <!-- welcome back message  -->
+
+
+    <!-- subheading -->
+
     <TextView
         android:id="@+id/acc_WelcomeBack"
-        android:layout_width="262dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
         android:text="@string/welcomeBack_msg"
         android:textAlignment="center"
         android:textColor="@color/brown"
@@ -25,12 +28,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <!-- subheading -->
     <TextView
         android:id="@+id/ac_Subtitle2"
-        android:layout_width="295dp"
-        android:layout_height="43dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/subtitle2"
         android:textAlignment="center"
@@ -42,21 +43,23 @@
         app:layout_constraintTop_toBottomOf="@id/acc_WelcomeBack" />
 
     <!-- Login heading -->
+
+    <!-- Account creation redirect -->
     <TextView
         android:id="@+id/acc_LoginHeader"
         android:layout_width="308dp"
         android:layout_height="52dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="@string/login"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ac_Subtitle2" />
 
-    <!-- Account creation redirect -->
     <TextView
         android:id="@+id/acc_signup_redirect"
         android:layout_width="236dp"
@@ -72,8 +75,8 @@
     <!-- Email Field -->
     <EditText
         android:id="@+id/acc_email"
-        android:layout_width="324dp"
-        android:layout_height="56dp"
+        android:layout_width="306dp"
+        android:layout_height="55dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/account_creation_rounded_corner"
         android:hint="@string/email"
@@ -89,8 +92,8 @@
     <!-- Password Field -->
     <EditText
         android:id="@+id/acc_password"
-        android:layout_width="325dp"
-        android:layout_height="60dp"
+        android:layout_width="305dp"
+        android:layout_height="58dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/account_creation_rounded_corner"
         android:hint="@string/password"

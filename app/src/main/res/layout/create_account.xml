@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/account_creation_bg"
     android:padding="32dp">
 
     <!-- welcome back message  -->
@@ -25,11 +24,18 @@
 
 
     <!-- subheading -->
+
+    <!-- Create account heading -->
+
+    <!-- Username Field -->
+
+    <!-- Email Field -->
+
     <TextView
         android:id="@+id/ac_Subtitle"
         android:layout_width="295dp"
         android:layout_height="43dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="36dp"
         android:text="@string/subtitle"
         android:textAlignment="center"
         android:textColor="@color/brown"
@@ -39,27 +45,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/acc_Welcome" />
 
-    <!-- Create account heading -->
     <TextView
         android:id="@+id/acc_CreateAccountHeader"
-        android:layout_width="323dp"
-        android:layout_height="82dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:text="@string/create_account"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ac_Subtitle" />
 
-    <!-- Username Field -->
     <EditText
         android:id="@+id/acc_username"
         android:layout_width="326dp"
         android:layout_height="58dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/account_creation_rounded_corner"
         android:hint="@string/username"
         android:inputType="text"
@@ -67,10 +72,10 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/acc_CreateAccountHeader" />
 
-    <!-- Email Field -->
     <EditText
         android:id="@+id/acc_email"
         android:layout_width="324dp"

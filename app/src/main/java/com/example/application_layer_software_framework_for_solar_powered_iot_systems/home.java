@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -75,6 +76,7 @@ public class home extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -86,61 +88,37 @@ public class home extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Button addNoteBtn = view.findViewById(R.id.btnAddNote);
+
+        addNoteBtn.setOnClickListener(v -> {
+            Fragment addNoteFragment = new addNote();
+            getParentFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, addNoteFragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
+
+
+
+
         drawSummaryChart(view);
     }
 
     private void drawSummaryChart(View view) {
-        LineChart summaryChart = view.findViewById(R.id.summaryChart);
-        if (summaryChart == null) return;
-
         // Load readings and limit to 30 entries
         List<Reading> allReadings = loadReadings(requireContext(), "monthlydata.json");
         int readingLimit = Math.min(allReadings.size(), 30);
         List<Reading> readings = allReadings.subList(0, readingLimit);
 
-        // Configuring basic chart properties
-        summaryChart.getLegend().setEnabled(false);
-        summaryChart.getAxisRight().setEnabled(false);
-        summaryChart.getDescription().setEnabled(false);
-        summaryChart.setExtraOffsets(12f, 16f, 12f, 8f);
-
         List<String> labels = new ArrayList<>();
         ArrayList<Entry> entries = new ArrayList<>();
-
 
         // Populate labels and entries with data
         for (int i = 0; i < readings.size(); i++) {
             Reading reading = readings.get(i);
-            String ts = reading.getTimestamp();
-            String formattedTime = (ts != null && ts.length() >= 16) ? ts.substring(11, 16) : (ts != null ? ts : ""); // Extract time part
-            labels.add(formattedTime);
-
             entries.add(new Entry((float) i, reading.getPowerKw(), null, null));
         }
-
-        // Chart X-axis with timestamp labels
-        XAxis xAxis = summaryChart.getXAxis();
-        xAxis.setDrawGridLinesEnabled(false);
-        xAxis.setGranularity(1f);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
-
-        // Chart Y-axis
-        YAxis ytAxis = summaryChart.getAxisLeft();
-        ytAxis.setAxisLineColor(Color.parseColor("#f1f1f1"));
-
-        // Chart data & styling
-        LineDataSet dataSet = new LineDataSet(entries, "Power Consumption");
-        dataSet.setMode(LineDataSet.Mode.CUBIC_BEZIER);
-        dataSet.setDrawValuesEnabled(false);
-        dataSet.setDrawFilledEnabled(true);
-        dataSet.setFillDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.summarychart));
-        dataSet.setDrawCirclesEnabled(true);
-        dataSet.setLineWidth(2.5f);
-
-        LineData lineData = new LineData(dataSet);
-        summaryChart.setData(lineData);
-        summaryChart.invalidate();
     }
 
 

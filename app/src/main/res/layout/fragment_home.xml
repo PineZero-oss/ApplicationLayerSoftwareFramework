@@ -128,31 +128,68 @@
            </androidx.cardview.widget.CardView>
 
            <androidx.cardview.widget.CardView
-               android:layout_width="0dp"
-               android:layout_height="250dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
                android:layout_marginStart="16dp"
                android:layout_marginEnd="16dp"
                android:layout_marginTop="16dp"
                app:cardBackgroundColor="@color/white"
-               app:cardCornerRadius="20dp"
+               app:cardCornerRadius="10dp"
                app:cardElevation="4dp"
                app:layout_constraintEnd_toEndOf="parent"
                app:layout_constraintStart_toStartOf="parent"
                app:layout_constraintTop_toBottomOf="@+id/cardView">
 
-               <com.github.mikephil.charting.charts.LineChart
-                   android:id="@+id/summaryChart"
+               <LinearLayout
                    android:layout_width="match_parent"
-                   android:layout_height="200dp"
-                   android:layout_gravity="center"
-                   android:layout_marginEnd="30dp"
-                   android:layout_marginStart="30dp"
-                   android:padding="12dp" />
+                   android:layout_height="match_parent"
+                   android:layout_marginStart="12dp"
+                   android:layout_marginEnd="12dp"
+                   android:padding="10dp"
+                   android:orientation="vertical">
+
+                   <TextView
+                       android:id="@+id/noteTitle"
+                       android:layout_width="match_parent"
+                       android:layout_height="0dp"
+                       android:layout_weight="200"
+                       android:textColor="#1E3A8A"
+                       android:textSize="18sp"
+                       android:text="Note Title"/>
+
+                   <TextView
+                       android:id="@+id/noteDescription"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="8dp"
+                       android:textColor="#1E3A8A"
+                       android:textSize="14sp"
+                       android:maxHeight="170dp"
+                       android:text="Note Description"/>
+
+               </LinearLayout>
 
            </androidx.cardview.widget.CardView>
 
        </androidx.constraintlayout.widget.ConstraintLayout>
 
    </androidx.core.widget.NestedScrollView>
+
+    <!-- add note button -->
+    <Button
+        android:id="@+id/btnAddNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#0D47A1"
+        android:text="Add Note"
+        android:textAllCaps="false"
+        android:textColor="#ffffffff"
+        android:textSize="16sp" />
+
+
 
 </FrameLayout>

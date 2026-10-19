@@ -388,20 +388,6 @@
                     </LinearLayout>
                 </androidx.core.widget.NestedScrollView>
 
-                <Button
-                    android:id="@+id/btnAddNote"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="12dp"
-                    android:backgroundTint="#FFD600"
-                    android:text="Add Note"
-                    android:textAllCaps="false"
-                    android:textColor="#000000"
-                    android:textSize="15sp" />
-
             </FrameLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

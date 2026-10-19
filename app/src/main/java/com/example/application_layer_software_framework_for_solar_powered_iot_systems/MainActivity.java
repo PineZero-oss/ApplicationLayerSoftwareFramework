@@ -1,6 +1,7 @@
 package com.example.application_layer_software_framework_for_solar_powered_iot_systems;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         BottomNavigationView bottomNavView = findViewById(R.id.bottom_nav);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new home()).commit();
             // Set a listener for item selection in the BottomNavigationView
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             if (itemId == R.id.nav_home) {
                 selectedFragment = new home();
             }
+
             if(itemId == R.id.nav_usage) {
                 selectedFragment = new usage();
             }

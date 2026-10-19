@@ -5,9 +5,9 @@
     <string name="create_account">Create Account</string>"
     <string name="repeat_password">Repeat Password</string>
     <string name="welcome_msg">Welcome!</string>
-    <string name="welcomeBack_msg">Welcome back!!</string>
+    <string name="welcomeBack_msg">Welcome back!</string>
     <string name="subtitle">Enter your account details and get started.</string>
-    <string name="subtitle2">Enter your account details to get started again!!</string>
+    <string name="subtitle2">Enter your account details to get started again!</string>
     <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -46,6 +46,10 @@
     <string name="home_power_generation_heading">Current power generation</string>
     <string name="efficiency_heading">Efficiency</string>
     <string name="efficiency_subheading">System Performance</string>
+    <string name="notes_title"> Title</string>
+    <string name="notes_mainTitle">Add note</string>
+    <string name="notes_body">Add note here.....</string>
+    <string name="notes_saveBtn">Save Note</string>
 
 
 </resources>

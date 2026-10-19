@@ -234,12 +234,7 @@ public class efficiency extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         drawTemperatureChart(view);
 
-        android.widget.Button btnAddNote = view.findViewById(R.id.btnAddNote);
-        if (btnAddNote != null) {
-            btnAddNote.setOnClickListener(v ->
-                    android.widget.Toast.makeText(requireContext(), "Add note clicked", android.widget.Toast.LENGTH_SHORT).show()
-            );
-        }
+
     }
 
     private void updateEfficiencySummaries(View view, List<Reading> allReadings, List<Reading> chartReadings) {
