@@ -127,49 +127,21 @@
 
            </androidx.cardview.widget.CardView>
 
-           <androidx.cardview.widget.CardView
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/notes_recyclerview"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
+               android:overScrollMode="never"
+               android:nestedScrollingEnabled="false"
                android:layout_marginStart="16dp"
                android:layout_marginEnd="16dp"
                android:layout_marginTop="16dp"
-               app:cardBackgroundColor="@color/white"
-               app:cardCornerRadius="10dp"
-               app:cardElevation="4dp"
+               app:layout_constraintBottom_toBottomOf="parent"
                app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.0"
                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-               <LinearLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:layout_marginStart="12dp"
-                   android:layout_marginEnd="12dp"
-                   android:padding="10dp"
-                   android:orientation="vertical">
-
-                   <TextView
-                       android:id="@+id/noteTitle"
-                       android:layout_width="match_parent"
-                       android:layout_height="0dp"
-                       android:layout_weight="200"
-                       android:textColor="#1E3A8A"
-                       android:textSize="18sp"
-                       android:text="Note Title"/>
-
-                   <TextView
-                       android:id="@+id/noteDescription"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_marginTop="8dp"
-                       android:textColor="#1E3A8A"
-                       android:textSize="14sp"
-                       android:maxHeight="170dp"
-                       android:text="Note Description"/>
-
-               </LinearLayout>
-
-           </androidx.cardview.widget.CardView>
+               app:layout_constraintTop_toBottomOf="@+id/cardView"
+               app:layout_constraintVertical_bias="0.066" />
 
        </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -185,7 +157,7 @@
         android:layout_marginEnd="120dp"
         android:layout_marginBottom="12dp"
         android:backgroundTint="#0D47A1"
-        android:text="Add Note"
+        android:text="@string/notes_mainTitle"
         android:textAllCaps="false"
         android:textColor="#ffffffff"
         android:textSize="16sp" />
