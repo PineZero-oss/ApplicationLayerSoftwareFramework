@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -19,7 +18,6 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.google.android.material.progressindicator.CircularProgressIndicator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -234,7 +232,6 @@ public class efficiency extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         drawTemperatureChart(view);
 
-
     }
 
     private void updateEfficiencySummaries(View view, List<Reading> allReadings, List<Reading> chartReadings) {
@@ -346,7 +343,6 @@ public class efficiency extends Fragment {
         reading.setBatteryPercentage((float) obj.optDouble("batteryPercentage", 0.0));
         return reading;
     }
-
     private String loadJSONFromAsset(Context context, String fileName) {
         try (InputStream is = context.getAssets().open(fileName)) {
             int size = is.available();

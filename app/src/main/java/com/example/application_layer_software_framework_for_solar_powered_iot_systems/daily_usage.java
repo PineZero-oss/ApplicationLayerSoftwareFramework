@@ -1,5 +1,4 @@
 package com.example.application_layer_software_framework_for_solar_powered_iot_systems;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -29,7 +28,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link daily_usage#newInstance} factory method to
@@ -41,12 +39,9 @@ public class daily_usage extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
-
     public static class dailyUsage {
         private String deviceId;
         private String timestamp;
@@ -61,11 +56,9 @@ public class daily_usage extends Fragment {
         public float getPowerKw() { return powerKw; }
         public void setPowerKw(float powerKw) { this.powerKw = powerKw; }
     }
-
     public daily_usage() {
         // Required empty public constructor
     }
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -92,22 +85,22 @@ public class daily_usage extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_daily_usage, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
         drawDailyUsageChart(view);
 
+        List<dailyUsage> readings =
+                loadReadings(requireContext(), "dailydata.json");
+        updateDailyBreakdown(view, readings);
+
     }
-
-
     private void drawDailyUsageChart(View view){
 
         LineChart dailyUsageChart = view.findViewById(R.id.dailyUsageChart);
@@ -166,14 +159,10 @@ public class daily_usage extends Fragment {
         dailyUsageDataSet.setCircleRadius(3.5f);
         dailyUsageDataSet.setLineWidth(2.5f);
 
-
-
-
         LineData lineData = new LineData(dailyUsageDataSet);
         dailyUsageChart.setData(lineData);
         dailyUsageChart.invalidate();
     }
-
     // Updating peak power gauge
     public void updatePowerGauge(List<dailyUsage> chartReadings , float powerKw){
 
@@ -188,8 +177,6 @@ public class daily_usage extends Fragment {
             maxPowerValue.setText(String.format(java.util.Locale.US, "Peak: %.1f kwh", maxPower));
         }
     }
-
-
     private String loadJSONFromAsset(Context context, String fileName) {
         try (InputStream is = context.getAssets().open(fileName)) {
             int size = is.available();
@@ -202,6 +189,62 @@ public class daily_usage extends Fragment {
         }
     }
 
+    private String formatDailyTime(String timestamp) {
+        if (timestamp == null || timestamp.length() < 16) {
+            return "";
+        }
+        return timestamp.substring(0, 10)
+                + " at "
+                + timestamp.substring(11, 16);
+    }
+    private void updateDailyBreakdown(
+            View view,
+            List<dailyUsage> readings
+    ) {
+        TextView peakValue =
+                view.findViewById(R.id.daily_peak_value);
+
+        TextView peakTime =
+                view.findViewById(R.id.daily_peak_time);
+
+        TextView lowValue =
+                view.findViewById(R.id.daily_low_value);
+
+        TextView lowTime =
+                view.findViewById(R.id.daily_low_time);
+        if (readings == null || readings.isEmpty()) {
+            peakValue.setText("No data");
+            peakTime.setText("");
+            lowValue.setText("No data");
+            lowTime.setText("");
+            return;
+        }
+        dailyUsage peak = readings.get(0);
+        dailyUsage low = readings.get(0);
+
+        for (dailyUsage reading : readings) {
+            if (reading.getPowerKw() > peak.getPowerKw()) {
+                peak = reading;
+            }
+
+            if (reading.getPowerKw() < low.getPowerKw()) {
+                low = reading;
+            }
+        }
+        peakValue.setText(String.format(
+                java.util.Locale.getDefault(),
+                "%.2f kW",
+                peak.getPowerKw()
+        ));
+        peakTime.setText(formatDailyTime(peak.getTimestamp()));
+
+        lowValue.setText(String.format(
+                java.util.Locale.getDefault(),
+                "%.2f kW",
+                low.getPowerKw()
+        ));
+        lowTime.setText(formatDailyTime(low.getTimestamp()));
+    }
     private List<dailyUsage> loadReadings(Context context, String fileName) {
 
         List<dailyUsage> readings = new ArrayList<>();
@@ -223,22 +266,15 @@ public class daily_usage extends Fragment {
 
                         float powerKw = (float) lastestjsonItem.optDouble("powerKw", 0.0);
                         updatePowerGauge(readings, powerKw);
-
                     }
-
                 }
-
             }
             catch (JSONException e) {
                 e.printStackTrace();
             }
         }
-
-
-
         return readings;
     }
-
 }
 
 

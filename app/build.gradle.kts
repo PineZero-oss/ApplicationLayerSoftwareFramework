@@ -48,4 +48,5 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation("org.mindrot:jbcrypt:0.4")
     implementation("com.github.PhilJay.MPAndroidChart:MPChartLib:v4.0.1")
+    implementation("androidx.cardview:cardview:1.0.0")
 }

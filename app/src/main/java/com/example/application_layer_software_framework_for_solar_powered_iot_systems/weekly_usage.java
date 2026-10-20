@@ -29,6 +29,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.widget.TextView;
+import java.util.Locale;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link weekly_usage#newInstance} factory method to
@@ -46,6 +49,15 @@ public class weekly_usage extends Fragment {
         // Required empty public constructor
     }
 
+    private static class HourlyReading {
+        private String timestamp;
+        private double powerKw;
+
+        HourlyReading(String timestamp, double powerKw) {
+            this.timestamp = timestamp;
+            this.powerKw = powerKw;
+        }
+    }
     public static class weeklyUsage {
         private String deviceId;
         private String periodStart;
@@ -83,6 +95,8 @@ public class weekly_usage extends Fragment {
 
         public double getAverageDailyEnergyKwh() { return averageDailyEnergyKwh; }
         public void setAverageDailyEnergyKwh(double averageDailyEnergyKwh) { this.averageDailyEnergyKwh = averageDailyEnergyKwh; }
+
+
     }
 
     public static weekly_usage newInstance(String param1, String param2) {
@@ -113,6 +127,7 @@ public class weekly_usage extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         drawWeeklyUsageChart(view);
+        showWeeklyBreakdown(view);
     }
 
     // Draws weekly usage chart
@@ -200,5 +215,97 @@ public class weekly_usage extends Fragment {
             }
         }
         return readings;
+    }
+
+    private void showWeeklyBreakdown(View view) {
+        TextView peakValue = view.findViewById(R.id.weekly_peak_value);
+        TextView peakTime = view.findViewById(R.id.weekly_peak_time);
+        TextView offPeakValue = view.findViewById(R.id.weekly_off_peak_value);
+        TextView offPeakTime = view.findViewById(R.id.weekly_off_peak_time);
+
+        List<HourlyReading> readings =
+                loadHourlyReadings(
+                        requireContext(),
+                        "solar_power_7_days.json"
+                );
+
+        if (readings.isEmpty()) {
+            peakValue.setText("No data");
+            peakTime.setText("");
+            offPeakValue.setText("No data");
+            offPeakTime.setText("");
+            return;
+        }
+
+        HourlyReading peak = readings.get(0);
+        HourlyReading offPeak = readings.get(0);
+
+        for (HourlyReading reading : readings) {
+            if (reading.powerKw > peak.powerKw) {
+                peak = reading;
+            }
+
+            if (reading.powerKw < offPeak.powerKw) {
+                offPeak = reading;
+            }
+        }
+        peakValue.setText(String.format(
+                Locale.getDefault(),
+                "%.2f kW",
+                peak.powerKw
+        ));
+
+        peakTime.setText(
+                "at " + formatTimestamp(peak.timestamp)
+        );
+
+        offPeakValue.setText(String.format(
+                Locale.getDefault(),
+                "%.2f kW",
+                offPeak.powerKw
+        ));
+
+        offPeakTime.setText(
+                "at " + formatTimestamp(offPeak.timestamp)
+        );
+    }
+
+    private List<HourlyReading> loadHourlyReadings(
+            Context context,
+            String fileName
+    ) {
+        List<HourlyReading> readings = new ArrayList<>();
+
+        String json = loadJSONFromAsset(context, fileName);
+
+        if (json == null) {
+            return readings;
+        }
+        try {
+            JSONArray jsonArray = new JSONArray(json);
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject object = jsonArray.getJSONObject(i);
+
+                String timestamp = object.optString("timestamp", "");
+                double powerKw = object.optDouble("powerKw", 0.0);
+
+                if (!timestamp.isEmpty()) {
+                    readings.add(new HourlyReading(timestamp, powerKw));
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return readings;
+    }
+    private String formatTimestamp(String timestamp) {
+        if (timestamp == null || timestamp.length() < 16) {
+            return timestamp;
+        }
+
+        return timestamp.substring(0, 10)
+                + " at "
+                + timestamp.substring(11, 16);
     }
 }

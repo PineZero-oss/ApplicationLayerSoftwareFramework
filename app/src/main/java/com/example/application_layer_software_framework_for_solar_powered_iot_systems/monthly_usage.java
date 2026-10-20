@@ -30,24 +30,21 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-
+import android.widget.TextView;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link monthly_usage#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class monthly_usage extends Fragment {
-
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
     private String mParam1;
     private String mParam2;
-
-    public monthly_usage() {
+    public monthly_usage()
+    {
         // Required empty public constructor
     }
-
     public static class monthlyUsage {
         private String month;
         private double energyKwh;
@@ -58,7 +55,6 @@ public class monthly_usage extends Fragment {
         public double getEnergyKwh() { return energyKwh; }
         public void setEnergyKwh(double energyKwh) { this.energyKwh = energyKwh; }
     }
-
     public static monthly_usage newInstance(String param1, String param2) {
         monthly_usage fragment = new monthly_usage();
         Bundle args = new Bundle();
@@ -76,19 +72,148 @@ public class monthly_usage extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_monthly_usage, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         drawMonthlyUsageChart(view);
+        List<monthlyUsage> readings =
+                loadReadings(requireContext(), "monthlydata.json");
+
+        updateMonthlyBreakdown(view, readings);
     }
 
+    private String formatMonthLabel(String month) {
+        if (month == null || month.length() < 7) {
+            return month == null ? "" : month;
+        }
+
+        String year = month.substring(0, 4);
+        String monthNumber = month.substring(5, 7);
+
+        String monthName;
+
+        switch (monthNumber) {
+            case "01":
+                monthName = "January";
+                break;
+            case "02":
+                monthName = "February";
+                break;
+            case "03":
+                monthName = "March";
+                break;
+            case "04":
+                monthName = "April";
+                break;
+            case "05":
+                monthName = "May";
+                break;
+            case "06":
+                monthName = "June";
+                break;
+            case "07":
+                monthName = "July";
+                break;
+            case "08":
+                monthName = "August";
+                break;
+            case "09":
+                monthName = "September";
+                break;
+            case "10":
+                monthName = "October";
+                break;
+            case "11":
+                monthName = "November";
+                break;
+            case "12":
+                monthName = "December";
+                break;
+            default:
+                monthName = monthNumber;
+        }
+
+        return monthName + " " + year;
+    }
+    private void updateMonthlyBreakdown(
+            View view,
+            List<monthlyUsage> readings
+    ) {
+        TextView highestValue =
+                view.findViewById(R.id.monthly_highest_value);
+
+        TextView highestMonth =
+                view.findViewById(R.id.monthly_highest_month);
+
+        TextView lowestValue =
+                view.findViewById(R.id.monthly_lowest_value);
+
+        TextView lowestMonth =
+                view.findViewById(R.id.monthly_lowest_month);
+
+        TextView averageValue =
+                view.findViewById(R.id.monthly_average_value);
+
+        if (readings == null || readings.isEmpty()) {
+            highestValue.setText("No data");
+            highestMonth.setText("");
+            lowestValue.setText("No data");
+            lowestMonth.setText("");
+            averageValue.setText("No data");
+            return;
+        }
+
+        monthlyUsage highest = readings.get(0);
+        monthlyUsage lowest = readings.get(0);
+        double total = 0.0;
+
+        for (monthlyUsage reading : readings) {
+            double energy = reading.getEnergyKwh();
+
+            total += energy;
+
+            if (energy > highest.getEnergyKwh()) {
+                highest = reading;
+            }
+
+            if (energy < lowest.getEnergyKwh()) {
+                lowest = reading;
+            }
+        }
+
+        double average = total / readings.size();
+
+        highestValue.setText(String.format(
+                java.util.Locale.getDefault(),
+                "%.2f kWh",
+                highest.getEnergyKwh()
+        ));
+
+        highestMonth.setText(formatMonthLabel(
+                highest.getMonth()
+        ));
+
+        lowestValue.setText(String.format(
+                java.util.Locale.getDefault(),
+                "%.2f kWh",
+                lowest.getEnergyKwh()
+        ));
+
+        lowestMonth.setText(formatMonthLabel(
+                lowest.getMonth()
+        ));
+
+        averageValue.setText(String.format(
+                java.util.Locale.getDefault(),
+                "%.2f kWh",
+                average
+        ));
+    }
     private void drawMonthlyUsageChart(View view) {
         BarChart monthlyUsageChart = view.findViewById(R.id.dailyUsageChart);
         if (monthlyUsageChart == null) return;
@@ -97,7 +222,6 @@ public class monthly_usage extends Fragment {
         if (readings.isEmpty()) {
             return;
         }
-
         List<String> labels = new ArrayList<>();
         ArrayList<BarEntry> monthlyUsageEntries = new ArrayList<>();
 
@@ -126,25 +250,21 @@ public class monthly_usage extends Fragment {
             labels.add(monthLabel);
             monthlyUsageEntries.add(new BarEntry((float) i, (float) reading.getEnergyKwh(), null, null));
         }
-
         monthlyUsageChart.getLegend().setEnabled(true);
         monthlyUsageChart.getAxisRight().setEnabled(false);
         monthlyUsageChart.getDescription().setEnabled(false);
         monthlyUsageChart.setExtraOffsets(6f, 12f, 6f, 4f);
-
         // Y-axis
         YAxis yAxis = monthlyUsageChart.getAxisLeft();
         yAxis.setAxisLineColor(Color.parseColor("#E2E8F0"));
         yAxis.setGridColor(Color.parseColor("#E2E8F0"));
         yAxis.setTextColor(Color.parseColor("#1E3A8A"));
-
         // X-axis
         XAxis xAxis = monthlyUsageChart.getXAxis();
         xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
         xAxis.setGranularity(1f);
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setDrawGridLinesEnabled(false);
-
         BarDataSet monthlyUsageDataSet = new BarDataSet(monthlyUsageEntries, "Monthly Energy (kWh)");
         monthlyUsageDataSet.setValueTextSize(8f);
 
@@ -152,7 +272,6 @@ public class monthly_usage extends Fragment {
         monthlyUsageChart.setData(barData);
         monthlyUsageChart.invalidate();
     }
-
     private String loadJSONFromAsset(Context context, String fileName) {
         try (InputStream is = context.getAssets().open(fileName)) {
             int size = is.available();
@@ -164,7 +283,6 @@ public class monthly_usage extends Fragment {
             return null;
         }
     }
-
     private List<monthlyUsage> loadReadings(Context context, String fileName) {
         List<monthlyUsage> readings = new ArrayList<>();
         String json = loadJSONFromAsset(context, fileName);
@@ -184,7 +302,6 @@ public class monthly_usage extends Fragment {
                         monthlyTotalsMap.put(monthKey, currentTotal + powerKw);
                     }
                 }
-
                 for (Map.Entry<String, Double> entry : monthlyTotalsMap.entrySet()) {
                     monthlyUsage reading = new monthlyUsage();
                     reading.setMonth(entry.getKey());
