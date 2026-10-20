@@ -3,9 +3,12 @@ package com.example.application_layer_software_framework_for_solar_powered_iot_s
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -38,7 +41,8 @@ class Note{
 }
 public class noteAdapter extends RecyclerView.Adapter<noteAdapter.ViewHolder> {
 
-    private List<Note> notes;
+    private final List<Note> notes;
+
 
     public noteAdapter(List<Note> notes) {
         this.notes = notes;
@@ -72,6 +76,21 @@ public class noteAdapter extends RecyclerView.Adapter<noteAdapter.ViewHolder> {
             super(itemView);
             noteTitle = itemView.findViewById(R.id.noteTitle);
             noteDescription = itemView.findViewById(R.id.noteDescription);
+
+          ImageButton editNoteBtn = itemView.findViewById(R.id.editNoteBtn);
+
+            //implementation of edit note button
+            editNoteBtn.setOnClickListener(v -> {
+                Fragment editNoteFragment = new editNote();
+
+                FragmentActivity activity = (FragmentActivity) itemView.getContext();
+                activity.getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, editNoteFragment)
+                        .addToBackStack(null)
+                        .commit();
+            });
+
+
         }
     }
 }

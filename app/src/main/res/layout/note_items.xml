@@ -43,6 +43,36 @@
                 android:textSize="14sp"
                 android:maxHeight="170dp"
                 android:text=""/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="end">
+
+                <ImageButton
+                    android:id="@+id/removeNoteBtn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="?selectableItemBackground"
+                    android:backgroundTint="#ffffff"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="remove note"
+                    android:src="@drawable/remove_note_icon" />
+
+                <ImageButton
+                    android:id="@+id/editNoteBtn"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:contentDescription="edit note"
+                    android:src="@drawable/edit_note_icon"
+                    android:background="?selectableItemBackground"/>
+            </LinearLayout>
+
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

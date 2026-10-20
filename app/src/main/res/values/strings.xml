@@ -48,8 +48,10 @@
     <string name="efficiency_subheading">System Performance</string>
     <string name="notes_title"> Title</string>
     <string name="notes_mainTitle">Add note</string>
+    <string name="editNotes_mainTitle">Edit note</string>
     <string name="notes_body">Add note here.....</string>
     <string name="notes_saveBtn">Save Note</string>
+    <string name="editNotes_saveBtn">Confirm Edit</string>
 
 
 </resources>

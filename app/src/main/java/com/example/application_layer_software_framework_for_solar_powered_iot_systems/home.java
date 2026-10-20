@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -92,6 +93,7 @@ public class home extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         Button addNoteBtn = view.findViewById(R.id.btnAddNote);
+        ImageButton editNoteBtn = view.findViewById(R.id.editNoteBtn);
         // Set up RecyclerView and adapter
         RecyclerView notesRecyclerView = view.findViewById(R.id.notes_recyclerview);
         notesRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
@@ -102,6 +104,7 @@ public class home extends Fragment {
         noteAdapter adapter = new noteAdapter(userNotes);
         notesRecyclerView.setAdapter(adapter);
 
+        //add note button
         addNoteBtn.setOnClickListener(v -> {
             Fragment addNoteFragment = new addNote();
             getParentFragmentManager().beginTransaction()
@@ -109,6 +112,10 @@ public class home extends Fragment {
                     .addToBackStack(null)
                     .commit();
         });
+
+
+
+
 
         drawSummaryChart(view);
     }
