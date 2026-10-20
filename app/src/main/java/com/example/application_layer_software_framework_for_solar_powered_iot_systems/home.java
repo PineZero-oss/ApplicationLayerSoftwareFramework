@@ -97,29 +97,10 @@ public class home extends Fragment {
         notesRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         notesRecyclerView.setNestedScrollingEnabled(false);
 
-
-
-        //dummy notes for testing
-        // Replace this with your actual data
-
-        // E.g. List<Note> userNotes = new ArrayList<>();
-        List<Note> dummyNotes = new ArrayList<>();
-        dummyNotes.add(new Note("Note 1", "Description for Note 1"));
-        dummyNotes.add(new Note("Note 2", "Description for Note 2"));
-        dummyNotes.add(new Note("Note 3", "Description for Note 3"));
-        dummyNotes.add(new Note("Note 4", "Description for Note 4"));
-        dummyNotes.add(new Note("Note 5", "Description for Note 5"));
-        dummyNotes.add(new Note("Note 6", "Description for Note 6"));
-        dummyNotes.add(new Note("Note 7", "Description for Note 7"));
-
-
-        // E.g. noteAdapter adapter = new noteAdapter(userNotes);
-        noteAdapter adapter = new noteAdapter(dummyNotes);
+        // Load only user-saved notes
+        List<Note> userNotes = addNote.loadNotes(requireContext());
+        noteAdapter adapter = new noteAdapter(userNotes);
         notesRecyclerView.setAdapter(adapter);
-
-
-
-
 
         addNoteBtn.setOnClickListener(v -> {
             Fragment addNoteFragment = new addNote();
@@ -128,9 +109,6 @@ public class home extends Fragment {
                     .addToBackStack(null)
                     .commit();
         });
-
-
-
 
         drawSummaryChart(view);
     }

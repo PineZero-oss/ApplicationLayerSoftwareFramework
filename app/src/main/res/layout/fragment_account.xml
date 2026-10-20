@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:gravity="center"
-            android:text="john doe"
+            android:text="..."
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
