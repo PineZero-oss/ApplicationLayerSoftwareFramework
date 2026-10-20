@@ -19,7 +19,7 @@ API: FastAPI. FastAPI is a modern and fast web framework coded with Python.\
 Authenticator: HMAC. Hash-Based Message Authentication Codes helps verify data integrity and authenticity by using a single shared secret key that is only known to the sender and receiver.\
 Communication: The mobile devices communicate with the local edge gateway by being connected to the same WiFi. In situations where WiFi is not available, Bluetooth Low Energy (BLE) is used.
 
-## How To Install And Use
+## How To Install And Use The Application
 _(Note: This will be entered at a later stage in development)_
 
 ## System Architecture
