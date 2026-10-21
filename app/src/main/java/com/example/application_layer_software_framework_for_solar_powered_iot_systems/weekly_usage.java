@@ -69,6 +69,7 @@ public class weekly_usage extends Fragment {
         private double totalEnergyKwh;
         private double averageDailyEnergyKwh;
 
+
         public String getDeviceId() { return deviceId; }
         public void setDeviceId(String deviceId) { this.deviceId = deviceId; }
 
@@ -139,8 +140,8 @@ public class weekly_usage extends Fragment {
             return;
         }
 
-        int readingLimit = Math.min(allReadings.size() , 7) ;
-        List<weeklyUsage> readings = allReadings.subList(0, readingLimit);
+        int readingLimit = Math.max(0,allReadings.size() - 7) ;
+        List<weeklyUsage> readings = allReadings.subList(readingLimit, allReadings.size());
 
         List<String> labels = new ArrayList<>();
         ArrayList<BarEntry> weeklyUsageEntries = new ArrayList<>();
@@ -223,10 +224,10 @@ public class weekly_usage extends Fragment {
         TextView offPeakValue = view.findViewById(R.id.weekly_off_peak_value);
         TextView offPeakTime = view.findViewById(R.id.weekly_off_peak_time);
 
-        List<HourlyReading> readings =
-                loadHourlyReadings(
+        List<weeklyUsage> readings =
+                loadReadings(
                         requireContext(),
-                        "solar_power_7_days.json"
+                        "weeklydata.json"
                 );
 
         if (readings.isEmpty()) {
@@ -237,36 +238,42 @@ public class weekly_usage extends Fragment {
             return;
         }
 
-        HourlyReading peak = readings.get(0);
-        HourlyReading offPeak = readings.get(0);
+        weeklyUsage peak = readings.get(0);
+        weeklyUsage offPeak = readings.get(0);
+        int startingValue =  Math.max(0,readings.size() - 7);
+        double total = 0.0;
 
-        for (HourlyReading reading : readings) {
-            if (reading.powerKw > peak.powerKw) {
+        for (weeklyUsage reading : readings.subList(startingValue, readings.size())) {
+            double energy = reading.getEnergyKwh();
+
+            total += energy;
+            if (energy > peak.energyKwh) {
                 peak = reading;
             }
-
-            if (reading.powerKw < offPeak.powerKw) {
+            if (energy < offPeak.energyKwh) {
                 offPeak = reading;
             }
         }
+
+
         peakValue.setText(String.format(
                 Locale.getDefault(),
                 "%.2f kW",
-                peak.powerKw
+                peak.energyKwh
         ));
 
         peakTime.setText(
-                "at " + formatTimestamp(peak.timestamp)
+                String.format("on %s", formatTimestamp(peak.periodStart))
         );
 
         offPeakValue.setText(String.format(
                 Locale.getDefault(),
                 "%.2f kW",
-                offPeak.powerKw
+                offPeak.energyKwh
         ));
 
         offPeakTime.setText(
-                "at " + formatTimestamp(offPeak.timestamp)
+                String.format("on %s", formatTimestamp(offPeak.periodStart))
         );
     }
 

@@ -101,6 +101,7 @@ public class daily_usage extends Fragment {
         updateDailyBreakdown(view, readings);
 
     }
+    // Draws daily usage chart
     private void drawDailyUsageChart(View view){
 
         LineChart dailyUsageChart = view.findViewById(R.id.dailyUsageChart);
@@ -109,9 +110,9 @@ public class daily_usage extends Fragment {
         if (allReadings.isEmpty()) {
             return;
         }
-
-        int readingLimit = Math.min(allReadings.size(), 30);
-        List<dailyUsage> readings = allReadings.subList(0, readingLimit);
+        // Limit readings to the last 12hrs
+        int readingLimit = Math.max(0,allReadings.size() - 13);
+        List<dailyUsage> readings = allReadings.subList(readingLimit, allReadings.size());
 
         List<String> labels = new ArrayList<>();
         ArrayList<Entry> dailyUsageEntries = new ArrayList<>();
@@ -163,20 +164,8 @@ public class daily_usage extends Fragment {
         dailyUsageChart.setData(lineData);
         dailyUsageChart.invalidate();
     }
-    // Updating peak power gauge
-    public void updatePowerGauge(List<dailyUsage> chartReadings , float powerKw){
 
-        float maxPower = -Float.MAX_VALUE;
-        TextView maxPowerValue = getView().findViewById(R.id.daily_usage_peak);
 
-        for(dailyUsage r : chartReadings){
-            maxPower = Math.max(maxPower, r.getPowerKw());
-        }
-
-        if(maxPowerValue != null){
-            maxPowerValue.setText(String.format(java.util.Locale.US, "Peak: %.1f kwh", maxPower));
-        }
-    }
     private String loadJSONFromAsset(Context context, String fileName) {
         try (InputStream is = context.getAssets().open(fileName)) {
             int size = is.available();
@@ -189,6 +178,7 @@ public class daily_usage extends Fragment {
         }
     }
 
+    // Helper method to format daily time
     private String formatDailyTime(String timestamp) {
         if (timestamp == null || timestamp.length() < 16) {
             return "";
@@ -197,6 +187,7 @@ public class daily_usage extends Fragment {
                 + " at "
                 + timestamp.substring(11, 16);
     }
+    // Update daily breakdown
     private void updateDailyBreakdown(
             View view,
             List<dailyUsage> readings
@@ -221,8 +212,9 @@ public class daily_usage extends Fragment {
         }
         dailyUsage peak = readings.get(0);
         dailyUsage low = readings.get(0);
+        int startingValue =  Math.max(0,readings.size() - 13);
 
-        for (dailyUsage reading : readings) {
+        for (dailyUsage reading : readings.subList(startingValue, readings.size())) {
             if (reading.getPowerKw() > peak.getPowerKw()) {
                 peak = reading;
             }
@@ -259,14 +251,6 @@ public class daily_usage extends Fragment {
                     reading.setTimestamp(obj.optString("timestamp"));
                     reading.setPowerKw((float) obj.optDouble("powerKw", 0.0));
                     readings.add(reading);
-
-                    for(int j = 0; j < readings.size(); j++){
-
-                        JSONObject lastestjsonItem = jsonArray.getJSONObject(jsonArray.length() - 1);
-
-                        float powerKw = (float) lastestjsonItem.optDouble("powerKw", 0.0);
-                        updatePowerGauge(readings, powerKw);
-                    }
                 }
             }
             catch (JSONException e) {
