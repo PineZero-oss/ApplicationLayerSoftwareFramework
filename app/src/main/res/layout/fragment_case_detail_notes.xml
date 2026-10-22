@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/alert_page_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="32dp"
+        android:paddingTop="28dp"
+        android:paddingEnd="32dp"
+        android:paddingBottom="32dp">
+
+        <TextView
+            android:id="@+id/notes_back_to_cases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="‹  Back to cases"
+            android:textColor="@color/alert_green"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/notes_case_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#9B8241"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/notes_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In Progress..."
+                android:textColor="#9B8241"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/notes_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:textColor="@color/alert_heading"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            app:cardBackgroundColor="@color/alert_white"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="0dp"
+            app:contentPadding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Investigation Notes"
+                    android:textColor="#4B4943"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/investigation_notes_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_notes_input"
+                    android:gravity="top|start"
+                    android:hint="Document your findings and your troubleshooting steps"
+                    android:inputType="textMultiLine|textCapSentences"
+                    android:padding="16dp"
+                    android:textColor="#4B4943"
+                    android:textColorHint="#85857D"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/save_notes_button"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#A98E49"
+                        android:text="Save notes"
+                        android:textAllCaps="false"
+                        android:textColor="@color/alert_white" />
+
+                    <Space
+                        android:layout_width="14dp"
+                        android:layout_height="1dp" />
+
+                    <Button
+                        android:id="@+id/close_case_button"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#5E3023"
+                        android:text="Close case"
+                        android:textAllCaps="false"
+                        android:textColor="@color/alert_white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -7,4 +7,16 @@
     <color name="acb_yellow">#FFBF00</color>
     <color name="otp_yellow">#B3FFD800</color>
     <color name="otp_textColor">#F006E5</color>
+
+    <color name="alert_page_background">#F7F4EC</color>
+    <color name="alert_green">#3A5743</color>
+    <color name="alert_heading">#5E3023</color>
+    <color name="alert_muted">#85857D</color>
+    <color name="alert_border">#DCD8CC</color>
+    <color name="alert_white">#FFFFFF</color>
+    <color name="alert_body_text">#6F6E68</color>
+    <color name="alert_highlight_blue">#2196D2</color>
+    <color name="alert_critical_text">#85857D</color>
+    <color name="writing_gold">#9A7E34</color>
+
 </resources>

@@ -49,4 +49,6 @@ dependencies {
     implementation("org.mindrot:jbcrypt:0.4")
     implementation("com.github.PhilJay.MPAndroidChart:MPChartLib:v4.0.1")
     implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.navigation:navigation-fragment:2.8.9")
+    implementation("androidx.navigation:navigation-ui:2.8.9")
 }

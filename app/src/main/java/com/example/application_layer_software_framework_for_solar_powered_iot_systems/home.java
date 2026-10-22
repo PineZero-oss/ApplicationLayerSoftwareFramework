@@ -2,18 +2,24 @@ package com.example.application_layer_software_framework_for_solar_powered_iot_s
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.PopupMenu;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.data.Entry;
@@ -83,6 +89,13 @@ public class home extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        ImageView homeMenuIcon =
+                view.findViewById(R.id.home_menu_icon);
+
+        homeMenuIcon.setOnClickListener(
+                this::showHomeMenu
+        );
 
         Button addNoteBtn = view.findViewById(R.id.btnAddNote);
         ImageButton editNoteBtn = view.findViewById(R.id.editNoteBtn);
@@ -187,5 +200,39 @@ public class home extends Fragment {
             }
         }
         return readings;
+    }
+    private void showHomeMenu(View anchor) {
+        PopupMenu popupMenu =
+                new PopupMenu(requireContext(), anchor);
+
+        popupMenu.getMenuInflater().inflate(
+                R.menu.home_menu,
+                popupMenu.getMenu()
+        );
+
+        popupMenu.setOnMenuItemClickListener(
+                this::onHomeMenuItemClicked
+        );
+
+        popupMenu.show();
+    }
+    private boolean onHomeMenuItemClicked(MenuItem item) {
+        if (item.getItemId() == R.id.menu_alerts) {
+            openAlerts();
+            return true;
+        }
+        return false;
+    }
+    private void openAlerts() {
+        requireActivity()
+                .getSupportFragmentManager()
+                .beginTransaction()
+                .setReorderingAllowed(true)
+                .replace(
+                        R.id.fragment_container,
+                        new Alerts()
+                )
+                .addToBackStack("alerts")
+                .commit();
     }
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_selected="true">
+        <shape>
+            <solid android:color="@color/alert_green" />
+            <corners android:radius="20dp" />
+            <padding
+                android:left="18dp"
+                android:top="0dp"
+                android:right="18dp"
+                android:bottom="0dp" />
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <solid android:color="@color/alert_white" />
+            <stroke
+                android:width="1dp"
+                android:color="@color/alert_border" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+</selector>
