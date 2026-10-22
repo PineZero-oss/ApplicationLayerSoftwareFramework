@@ -12,7 +12,7 @@ And they will be able to do all of that and more with ease, thanks to a UI that 
 
 ## Tech Stack
 The application is built with a highly robust architecture, which is explored more below.\
-Front-end: Kotlin (Android). Kotlin allows the user to have a modern, fast, fluid, and reliable interface.\
+Front-end: XML (Android Studio). XML offers a mature structure to assist in the visual UI layout.\
 Back-end: Java. Java is a stable and secure language, trusted by global banks and tech giants.\
 Database: SQLite. SQLite is a highly structured database system that ensures that data is organised and can be scaled efficiently, being able to be retrieved instantly when a user needs it. SQLite also allows the database to be used even during offline access.\
 API: FastAPI. FastAPI is a modern and fast web framework coded with Python.\
