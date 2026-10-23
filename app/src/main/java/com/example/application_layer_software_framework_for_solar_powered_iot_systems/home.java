@@ -123,6 +123,17 @@ public class home extends Fragment {
 
 
         drawSummaryChart(view);
+
+        // Applies local SQLite role visibility & sync latest user_type from Firestore
+        DatabaseHelper dbHelper = new DatabaseHelper(requireContext());
+        updateMenuVisibilityForRole(homeMenuIcon, dbHelper.isCurrentUserManager(requireContext()));
+        dbHelper.syncUserRoleFromFirestore(requireContext(), isManager -> {
+            if (!isAdded()) return;
+            updateMenuVisibilityForRole(homeMenuIcon, isManager);
+            userNotes.clear();
+            userNotes.addAll(addNote.loadNotes(requireContext()));
+            adapter.notifyDataSetChanged();
+        });
     }
 
     private void drawSummaryChart(View view) {
@@ -210,6 +221,12 @@ public class home extends Fragment {
                 popupMenu.getMenu()
         );
 
+        // Hide Alerts option if user is not a manager
+        MenuItem alertsItem = popupMenu.getMenu().findItem(R.id.menu_alerts);
+        if (alertsItem != null) {
+            alertsItem.setVisible(new DatabaseHelper(requireContext()).isCurrentUserManager(requireContext()));
+        }
+
         popupMenu.setOnMenuItemClickListener(
                 this::onHomeMenuItemClicked
         );
@@ -224,6 +241,12 @@ public class home extends Fragment {
         return false;
     }
     private void openAlerts() {
+        // Restrict Alerts navigation to managers only
+        if (!new DatabaseHelper(requireContext()).isCurrentUserManager(requireContext())) {
+            android.widget.Toast.makeText(requireContext(), "Access restricted to managers.", android.widget.Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         requireActivity()
                 .getSupportFragmentManager()
                 .beginTransaction()
@@ -234,5 +257,17 @@ public class home extends Fragment {
                 )
                 .addToBackStack("alerts")
                 .commit();
+    }
+
+    // Hides home_menu_icon completely if farmer has no visible menu items
+    private void updateMenuVisibilityForRole(ImageView homeMenuIcon, boolean isManager) {
+        if (homeMenuIcon == null || !isAdded()) return;
+        PopupMenu tempMenu = new PopupMenu(requireContext(), homeMenuIcon);
+        tempMenu.getMenuInflater().inflate(R.menu.home_menu, tempMenu.getMenu());
+        MenuItem alertsItem = tempMenu.getMenu().findItem(R.id.menu_alerts);
+        if (alertsItem != null) {
+            alertsItem.setVisible(isManager);
+        }
+        homeMenuIcon.setVisibility(tempMenu.getMenu().hasVisibleItems() ? View.VISIBLE : View.GONE);
     }
 }

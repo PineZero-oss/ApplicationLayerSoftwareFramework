@@ -15,10 +15,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
+
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -94,6 +100,9 @@ public class account extends Fragment {
             btnLogout.setOnClickListener(v -> performLogout());
         }
         loadUserProfile();
+
+        // Added: Hook up "Sync now" action to sync Firestore and SQLite
+        setupSyncNowButton(view);
     }
 
     private void loadUserProfile() {
@@ -128,6 +137,7 @@ public class account extends Fragment {
         }
 
         // 2. Sync from Cloud Firestore if online
+        final String syncedEmail = currentEmail;
         if (currentUser != null) {
             FirebaseFirestore.getInstance().collection("users").document(currentUser.getUid())
                     .get()
@@ -137,6 +147,26 @@ public class account extends Fragment {
                             if (cloudUsername != null && tvUsername != null) {
                                 tvUsername.setText(cloudUsername);
                             }
+
+                            // Added: Sync user_type from Firestore -> SQLite (defaulting to 'farmer' if not set yet)
+                            String cloudUserType = documentSnapshot.getString("user_type");
+                            if (cloudUserType == null) {
+                                cloudUserType = documentSnapshot.getString("userType");
+                            }
+                            if (cloudUserType == null) {
+                                Map<String, Object> initRole = new HashMap<>();
+                                initRole.put("user_type", DatabaseHelper.ROLE_FARMER);
+                                FirebaseFirestore.getInstance()
+                                        .collection("users")
+                                        .document(currentUser.getUid())
+                                        .set(initRole, SetOptions.merge());
+                            }
+                            databaseHelper.upsertUserFromCloud(
+                                    currentUser.getUid(),
+                                    cloudUsername,
+                                    syncedEmail,
+                                    cloudUserType
+                            );
                         }
                     });
         }
@@ -154,5 +184,61 @@ public class account extends Fragment {
             startActivity(intent);
             getActivity().finish();
         }
+    }
+
+    // ==================== ADDED: SYNC NOW HELPERS ====================
+
+    private void setupSyncNowButton(View root) {
+        View syncNowView = findSyncNowView(root);
+        if (syncNowView != null) {
+            syncNowView.setClickable(true);
+            syncNowView.setOnClickListener(v -> {
+                syncNowView.setEnabled(false);
+                Toast.makeText(requireContext(), "Syncing Firestore & SQLite...", Toast.LENGTH_SHORT).show();
+
+                databaseHelper.syncDatabaseWithFirestore(requireContext(), (success, message) -> {
+                    if (!isAdded()) return;
+                    syncNowView.setEnabled(true);
+                    Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show();
+                    if (success) {
+                        loadUserProfile();
+                    }
+                });
+            });
+        }
+    }
+
+    private View findSyncNowView(View root) {
+        String[] candidateIds = {
+                "acc_syncBtn", "sync_now", "btn_sync_now", "syncNowBtn", "syncBtn", "tv_sync_now"
+        };
+        if (getContext() != null) {
+            String pkg = getContext().getPackageName();
+            for (String idName : candidateIds) {
+                int resId = getResources().getIdentifier(idName, "id", pkg);
+                if (resId != 0) {
+                    View found = root.findViewById(resId);
+                    if (found != null) return found;
+                }
+            }
+        }
+        return findViewByTextRecursive(root, "sync now");
+    }
+
+    private View findViewByTextRecursive(View view, String searchLower) {
+        if (view instanceof TextView) {
+            CharSequence text = ((TextView) view).getText();
+            if (text != null && text.toString().toLowerCase(Locale.US).contains(searchLower)) {
+                return view;
+            }
+        }
+        if (view instanceof ViewGroup) {
+            ViewGroup group = (ViewGroup) view;
+            for (int i = 0; i < group.getChildCount(); i++) {
+                View match = findViewByTextRecursive(group.getChildAt(i), searchLower);
+                if (match != null) return match;
+            }
+        }
+        return null;
     }
 }

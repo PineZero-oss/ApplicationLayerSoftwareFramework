@@ -57,6 +57,13 @@ public class Alerts extends Fragment
     ) {
         super.onViewCreated(view, savedInstanceState);
 
+        DatabaseHelper dbHelper = new DatabaseHelper(requireContext());
+        if (!dbHelper.isCurrentUserManager(requireContext())) {
+            android.widget.Toast.makeText(requireContext(), "Access restricted to managers.", android.widget.Toast.LENGTH_SHORT).show();
+            requireActivity().getSupportFragmentManager().popBackStack();
+            return;
+        }
+
         RecyclerView recyclerView =
                 view.findViewById(
                         R.id.alerts_recycler_view

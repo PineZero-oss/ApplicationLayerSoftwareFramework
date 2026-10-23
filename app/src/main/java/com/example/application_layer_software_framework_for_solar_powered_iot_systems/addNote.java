@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.List;
+import java.util.UUID;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link addNote#newInstance} factory method to
@@ -68,9 +71,6 @@ public class addNote extends Fragment {
         return inflater.inflate(R.layout.fragment_add_note, container, false);
     }
 
-    private static final String PREFS_NAME = "UserNotesPrefs";
-    private static final String KEY_NOTES = "saved_notes_json";
-
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -95,49 +95,20 @@ public class addNote extends Fragment {
                 return;
             }
 
-            saveNote(requireContext(), title, description);
+            DatabaseHelper dbHelper = new DatabaseHelper(requireContext());
+            String noteId = UUID.randomUUID().toString();
+            String userId = dbHelper.getCurrentUserId(requireContext());
+            String authorEmail = dbHelper.getCurrentUserEmail(requireContext());
+
+            dbHelper.insertNote(noteId, userId, authorEmail, title, description);
 
             android.widget.Toast.makeText(requireContext(), "Note saved", android.widget.Toast.LENGTH_SHORT).show();
-
-            // Return to the previous screen (Home / Efficiency)
             getParentFragmentManager().popBackStack();
         });
     }
 
-    public static void saveNote(android.content.Context context, String title, String description) {
-        android.content.SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, android.content.Context.MODE_PRIVATE);
-        String existingJson = prefs.getString(KEY_NOTES, "[]");
-
-        try {
-            org.json.JSONArray jsonArray = new org.json.JSONArray(existingJson);
-            org.json.JSONObject noteObj = new org.json.JSONObject();
-            noteObj.put("title", title);
-            noteObj.put("description", description);
-            jsonArray.put(noteObj);
-
-            prefs.edit().putString(KEY_NOTES, jsonArray.toString()).apply();
-        } catch (org.json.JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static java.util.List<Note> loadNotes(android.content.Context context) {
-        java.util.List<Note> savedNotes = new java.util.ArrayList<>();
-        android.content.SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, android.content.Context.MODE_PRIVATE);
-        String existingJson = prefs.getString(KEY_NOTES, "[]");
-
-        try {
-            org.json.JSONArray jsonArray = new org.json.JSONArray(existingJson);
-            // Load newest notes first so they appear at the top of the RecyclerView
-            for (int i = jsonArray.length() - 1; i >= 0; i--) {
-                org.json.JSONObject obj = jsonArray.getJSONObject(i);
-                String title = obj.optString("title", "");
-                String description = obj.optString("description", "");
-                savedNotes.add(new Note(title, description));
-            }
-        } catch (org.json.JSONException e) {
-            e.printStackTrace();
-        }
-        return savedNotes;
+    public static List<Note> loadNotes(android.content.Context context) {
+        DatabaseHelper dbHelper = new DatabaseHelper(context);
+        return dbHelper.getVisibleNotesForCurrentUser(context);
     }
 }

@@ -95,6 +95,7 @@ public class CreateAccount extends AppCompatActivity {
                     firestoreUser.put("user_id", userId);
                     firestoreUser.put("username", username);
                     firestoreUser.put("email", email);
+                    firestoreUser.put("user_type", "farmer");
                     firestoreUser.put("password_hash", passwordHash);
                     firestoreUser.put("created_at", timestamp);
 
