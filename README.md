@@ -30,8 +30,19 @@ This is the system architecture for the application. It delves into the details 
 These are some screenshots of what the application looks like on a device, including the dashboard and information about the possible IoT devices.\
 _(Note: Images are not final at the moment and are subject to change as development continues)_
 
-<img width="377" height="666" alt="Login Screen" src="https://github.com/user-attachments/assets/17c31244-708b-455b-a55c-7f5e1f078a6e" />\
+<img width="319" height="709" alt="Login" src="https://github.com/user-attachments/assets/b466baff-131c-400c-9237-040cdc9dc82a" />\
 This is the page where users can sign up, with an option to log in if they already have an account.
 
-<img width="374" height="799" alt="SolarFlare Profile Page" src="https://github.com/user-attachments/assets/3dbb85bc-ae01-4974-93d4-4547ce8b51b5" /> \
+<img width="319" height="770" alt="SolarFlare Profile Page" src="https://github.com/user-attachments/assets/3dbb85bc-ae01-4974-93d4-4547ce8b51b5" />\
 This is the Account page for logged in users, with numerous options to customise and personalise the user's experience. There is also a navigation bar at the bottom, helping users jump from page to page.
+
+<img width="319" height="663" alt="Dashboard" src="https://github.com/user-attachments/assets/621af630-19d3-4d0e-b841-1bb9faeb540a" />\
+This is what the dashboard looks like once signed in, with a navigation bar at the bottom.
+
+<img width="319" height="689" alt="Usage" src="https://github.com/user-attachments/assets/342c3c0e-d43a-4e77-83d4-b093cd1f3f1a" />\
+This is what the Usage tab looks like, with options of zooming in, seeing statistics, and moving between different time ranges.
+
+<img width="319" height="664" alt="Alerts" src="https://github.com/user-attachments/assets/59b9a7cc-8ddc-4afd-ae4f-35ee8f4dcfa4" />\
+This is what the Alerts tab looks like after pressing the three lines at the top of the dashboard.
+
+Thank you for using SolarFlare! We hope to see you soon.
