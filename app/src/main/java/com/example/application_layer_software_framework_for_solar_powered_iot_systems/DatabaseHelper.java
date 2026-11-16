@@ -51,35 +51,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "last_seen TEXT, " +
                     "FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE);";
 
-    private static final String CREATE_TABLE_TELEMETRY =
-            "CREATE TABLE telemetry_readings (" +
-                    "reading_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    "device_id TEXT NOT NULL, " +
-                    "timestamp TEXT NOT NULL, " +
-                    "temperature REAL, " +
-                    "humidity REAL, " +
-                    "battery_percentage REAL, " +
-                    "event_type TEXT DEFAULT 'telemetry', " +
-                    "sequence_number INTEGER, " +
-                    "sync_status TEXT DEFAULT 'PENDING_SYNC', " +
-                    "sync_error_message TEXT, " +
-                    "FOREIGN KEY (device_id) REFERENCES devices(device_id) ON DELETE CASCADE);";
-
-    private static final String CREATE_TABLE_EFFICIENCY_NOTES =
-            "CREATE TABLE efficiency_notes (" +
-                    "note_id TEXT PRIMARY KEY NOT NULL, " +
-                    "device_id TEXT NOT NULL, " +
-                    "user_id TEXT NOT NULL, " +
-                    "author_email TEXT, " +
-                    "title TEXT, " +
-                    "description TEXT, " +
-                    "content TEXT NOT NULL, " +
-                    "created_at TEXT NOT NULL, " +
-                    "updated_at TEXT NOT NULL, " +
-                    "sync_status TEXT DEFAULT 'PENDING_SYNC', " +
-                    "FOREIGN KEY (device_id) REFERENCES devices(device_id) ON DELETE CASCADE, " +
-                    "FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE);";
-
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -88,8 +59,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_USERS);
         db.execSQL(CREATE_TABLE_DEVICES);
-        db.execSQL(CREATE_TABLE_TELEMETRY);
-        db.execSQL(CREATE_TABLE_EFFICIENCY_NOTES);
 
         db.execSQL("CREATE INDEX idx_telemetry_sync ON telemetry_readings(sync_status);");
         db.execSQL("CREATE INDEX idx_telemetry_device_time ON telemetry_readings(device_id, timestamp);");
@@ -141,7 +110,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         boolean isValid = false;
         if (cursor.moveToFirst()) {
             String storedHash = cursor.getString(cursor.getColumnIndexOrThrow("password_hash"));
-            isValid = HashSecurity.checkPassword(plainPassword, storedHash);
+            if (storedHash != null && !storedHash.isEmpty()) {
+                isValid = HashSecurity.checkPassword(plainPassword, storedHash);
+            }
         }
         cursor.close();
         return isValid;
@@ -153,7 +124,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT user_id, username, email, created_at FROM users WHERE email = ?", new String[]{email});
     }
 
-    // ==================== ADDED: ROLES, NOTES CRUD & CLOUD SYNC ====================
+    // Added Roles, offline/online session, notes crud & cloud sync
 
     public static final String ROLE_FARMER = "farmer";
     public static final String ROLE_MANAGER = "manager";
@@ -213,17 +184,113 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return ROLE_FARMER;
     }
 
+    // Save offline login session so app works offline and can reconnect to Firebase when online
+    public void saveOfflineSession(Context context, String email, String plainPassword) {
+        SharedPreferences prefs = context.getSharedPreferences("UserSession", Context.MODE_PRIVATE);
+        prefs.edit()
+                .putString("logged_in_email", email)
+                .putString("pending_online_password", plainPassword)
+                .putBoolean("is_offline_session", true)
+                .apply();
+    }
+
+    // Cache/update user's BCrypt hash locally in SQLite after a successful online Firebase login
+    public void syncLocalCredentialsAfterOnlineLogin(Context context, String userId, String email, String plainPassword) {
+        if (email == null || plainPassword == null) return;
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String hashedPassword = HashSecurity.hashPassword(plainPassword);
+
+        Cursor c = db.rawQuery("SELECT user_id FROM users WHERE email = ?", new String[]{email});
+        boolean exists = c.moveToFirst();
+        c.close();
+
+        if (exists) {
+            ContentValues values = new ContentValues();
+            if (userId != null && !userId.isEmpty()) {
+                values.put("user_id", userId);
+            }
+            values.put("password_hash", hashedPassword);
+            db.update("users", values, "email = ?", new String[]{email});
+        } else {
+            String defaultUsername = email.contains("@") ? email.split("@")[0] : email;
+            insertUser(
+                    userId != null ? userId : email,
+                    defaultUsername,
+                    email,
+                    hashedPassword,
+                    nowIsoTimestamp()
+            );
+        }
+
+        SharedPreferences prefs = context.getSharedPreferences("UserSession", Context.MODE_PRIVATE);
+        prefs.edit()
+                .putString("logged_in_email", email)
+                .putBoolean("is_offline_session", false)
+                .remove("pending_online_password")
+                .apply();
+    }
+
+    // Automatically restores Firebase Auth session & syncs Firestore <-> SQLite when internet returns
+    public void restoreOnlineSessionIfConnected(Context context, @Nullable SyncCallback callback) {
+        android.net.ConnectivityManager cm =
+                (android.net.ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (cm == null) {
+            if (callback != null) callback.onComplete(false, "Offline mode");
+            return;
+        }
+
+        android.net.NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+        if (!isConnected) {
+            if (callback != null) callback.onComplete(false, "Offline mode");
+            return;
+        }
+
+        SharedPreferences prefs = context.getSharedPreferences("UserSession", Context.MODE_PRIVATE);
+        String email = prefs.getString("logged_in_email", null);
+        String pendingPass = prefs.getString("pending_online_password", null);
+
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() != null) {
+            syncDatabaseWithFirestore(context, callback);
+        } else if (email != null && pendingPass != null) {
+            auth.signInWithEmailAndPassword(email, pendingPass)
+                    .addOnSuccessListener(authResult -> {
+                        prefs.edit()
+                                .putBoolean("is_offline_session", false)
+                                .remove("pending_online_password")
+                                .apply();
+                        syncDatabaseWithFirestore(context, callback);
+                    })
+                    .addOnFailureListener(e -> {
+                        if (callback != null) {
+                            callback.onComplete(false, "Could not restore cloud session: " + e.getMessage());
+                        }
+                    });
+        } else {
+            if (callback != null) {
+                callback.onComplete(false, "No active cloud session to sync.");
+            }
+        }
+    }
+
     public void upsertUserFromCloud(String userId, String username, String email, String rawUserType) {
+        this.upsertUserFromCloudWithHash(userId, username, email, null, rawUserType);
+    }
+
+    public void upsertUserFromCloudWithHash(String userId, String username, String email, @Nullable String cloudPasswordHash, String rawUserType) {
         if (email == null || email.trim().isEmpty()) return;
 
         String normalizedRole = normalizeUserType(rawUserType);
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = db.rawQuery(
-                "SELECT user_id FROM users WHERE user_id = ? OR email = ?",
+                "SELECT user_id, password_hash FROM users WHERE user_id = ? OR email = ?",
                 new String[]{userId != null ? userId : "", email}
         );
         boolean exists = cursor.moveToFirst();
+        String existingHash = exists ? cursor.getString(1) : null;
         cursor.close();
 
         ContentValues values = new ContentValues();
@@ -232,6 +299,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         values.put("email", email);
         values.put("user_type", normalizedRole);
+
+        // If SQLite doesn't have a password_hash yet, pull the BCrypt hash from Firestore so offline login works
+        if ((existingHash == null || existingHash.isEmpty()) && cloudPasswordHash != null && !cloudPasswordHash.isEmpty()) {
+            values.put("password_hash", cloudPasswordHash);
+        }
 
         if (exists) {
             db.update(
@@ -244,6 +316,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put("user_id", userId);
             if (!values.containsKey("username")) {
                 values.put("username", email.split("@")[0]);
+            }
+            if (cloudPasswordHash != null && !cloudPasswordHash.isEmpty()) {
+                values.put("password_hash", cloudPasswordHash);
             }
             values.put("created_at", nowIsoTimestamp());
             db.insert("users", null, values);
@@ -400,7 +475,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void syncUserRoleFromFirestore(Context context, @Nullable RoleSyncCallback callback) {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser == null) {
-            if (callback != null) callback.onRoleSynced(isCurrentUserManager(context));
+            // Try restoring online session if device was logged in offline and connection is now available
+            restoreOnlineSessionIfConnected(context, (success, msg) -> {
+                if (callback != null) callback.onRoleSynced(isCurrentUserManager(context));
+            });
             return;
         }
 
@@ -409,10 +487,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 .addOnSuccessListener(doc -> {
                     String role = ROLE_FARMER;
                     String username = null;
+                    String cloudPassHash = null;
                     String email = currentUser.getEmail();
 
                     if (doc.exists()) {
                         username = doc.getString("username");
+                        cloudPassHash = doc.getString("password_hash");
                         String cloudRole = doc.getString("user_type");
                         if (cloudRole == null) cloudRole = doc.getString("userType");
 
@@ -425,7 +505,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                         role = normalizeUserType(cloudRole);
                     }
 
-                    upsertUserFromCloud(currentUser.getUid(), username, email, role);
+                    upsertUserFromCloudWithHash(currentUser.getUid(), username, email, cloudPassHash, role);
 
                     if (!ROLE_MANAGER.equals(role)) {
                         removeOtherUsersNotes(currentUser.getUid(), email);
@@ -443,20 +523,46 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void syncDatabaseWithFirestore(Context context, @Nullable SyncCallback callback) {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser == null) {
-            if (callback != null) {
-                callback.onComplete(false, "Please sign in online to sync with cloud.");
+            // If logged in via offline SQLite and internet is now back, reconnect Firebase Auth first
+            SharedPreferences prefs = context.getSharedPreferences("UserSession", Context.MODE_PRIVATE);
+            String email = prefs.getString("logged_in_email", null);
+            String pendingPass = prefs.getString("pending_online_password", null);
+
+            if (email != null && pendingPass != null) {
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(email, pendingPass)
+                        .addOnSuccessListener(res -> {
+                            prefs.edit()
+                                    .putBoolean("is_offline_session", false)
+                                    .remove("pending_online_password")
+                                    .apply();
+                            performCloudSyncForAuthenticatedUser(context, res.getUser(), callback);
+                        })
+                        .addOnFailureListener(e -> {
+                            if (callback != null) {
+                                callback.onComplete(false, "Offline: Changes saved locally in SQLite.");
+                            }
+                        });
+            } else {
+                if (callback != null) {
+                    callback.onComplete(false, "Offline: Changes saved locally in SQLite.");
+                }
             }
             return;
         }
 
+        performCloudSyncForAuthenticatedUser(context, currentUser, callback);
+    }
+
+    private void performCloudSyncForAuthenticatedUser(Context context, FirebaseUser currentUser, @Nullable SyncCallback callback) {
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
         String uid = currentUser.getUid();
         String email = currentUser.getEmail();
 
-        // 1. Sync user profile & user_type between Firestore and SQLite
+        // 1. Sync user profile, password_hash, & user_type between Firestore and SQLite
         firestore.collection("users").document(uid).get()
                 .addOnSuccessListener(userDoc -> {
                     String cloudUsername = userDoc.exists() ? userDoc.getString("username") : null;
+                    String cloudPasswordHash = userDoc.exists() ? userDoc.getString("password_hash") : null;
                     String rawRole = null;
                     if (userDoc.exists()) {
                         rawRole = userDoc.getString("user_type");
@@ -471,7 +577,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     }
 
                     String syncedRole = normalizeUserType(rawRole);
-                    upsertUserFromCloud(uid, cloudUsername, email, syncedRole);
+                    upsertUserFromCloudWithHash(uid, cloudUsername, email, cloudPasswordHash, syncedRole);
                     boolean isManager = ROLE_MANAGER.equals(syncedRole);
 
                     // 2. Push local SQLite changes (deletions, notes, telemetry) to Firestore
