@@ -67,6 +67,16 @@ public class SignIn extends AppCompatActivity {
         // 1. Try Firebase Authentication online
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener(authResult -> {
+                    // CRITICAL FIX: Cache BCrypt password hash locally so offline login works next time
+                    if (authResult.getUser() != null) {
+                        databaseHelper.syncLocalCredentialsAfterOnlineLogin(
+                                SignIn.this,
+                                authResult.getUser().getUid(),
+                                email,
+                                password
+                        );
+                    }
+
                     Toast.makeText(SignIn.this, "Login successful!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(SignIn.this, MainActivity.class));
                     finish();
@@ -75,12 +85,14 @@ public class SignIn extends AppCompatActivity {
                     // 2. Offline fallback: verify against local SQLite using BCrypt
                     boolean isLocalValid = databaseHelper.verifyLocalCredentials(email, password);
                     if (isLocalValid) {
+                        // Save offline session state for auto-reconnection
+                        databaseHelper.saveOfflineSession(SignIn.this, email, password);
+
                         Toast.makeText(SignIn.this, "Offline login successful!", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignIn.this, MainActivity.class));
                         finish();
                     } else {
-                        Toast.makeText(SignIn
-                                .this, "Authentication failed: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(SignIn.this, "Authentication failed. First-time sign-in requires an internet connection.", Toast.LENGTH_LONG).show();
                     }
                 });
     }
