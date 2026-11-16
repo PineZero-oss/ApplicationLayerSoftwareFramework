@@ -9,8 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.google.android.material.appbar.MaterialToolbar;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,28 +18,18 @@ import com.google.android.material.appbar.MaterialToolbar;
  */
 public class usage extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private TextView filterDay, filterWeek, filterMonth;
 
     public usage() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment usage.
-     */
-    // TODO: Rename and change types and number of parameters
     public static usage newInstance(String param1, String param2) {
         usage fragment = new usage();
         Bundle args = new Bundle();
@@ -62,7 +51,6 @@ public class usage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_usage, container, false);
     }
 
@@ -70,31 +58,41 @@ public class usage extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        MaterialToolbar toolbar = view.findViewById(R.id.toolbar_usage);
-        if (toolbar != null) {
-            // Load default sub-fragment when the view is created
-            if (savedInstanceState == null) {
-                getChildFragmentManager().beginTransaction().replace(R.id.usage_container, new daily_usage()).commit();
-            }
-            // Set a listener for item selection in the toolbar
-            toolbar.setOnMenuItemClickListener(item -> {
-                Fragment selectedFragment = null;
-                int id = item.getItemId();
+        filterDay = view.findViewById(R.id.filter_day);
+        filterWeek = view.findViewById(R.id.filter_week);
+        filterMonth = view.findViewById(R.id.filter_month);
 
-                if (id == R.id.usage_day) {
-                    selectedFragment = new daily_usage();
-                } else if (id == R.id.usage_week) {
-                    selectedFragment = new weekly_usage();
-                } else if (id == R.id.usage_month) {
-                    selectedFragment = new monthly_usage();
-                }
-                // Replace the current fragment with the selected sub-fragment
-                if (selectedFragment != null) {
-                    getChildFragmentManager().beginTransaction().replace(R.id.usage_container, selectedFragment).commit();
-                    return true;
-                }
-                return false;
+        if (savedInstanceState == null) {
+            getChildFragmentManager().beginTransaction().replace(R.id.usage_container, new daily_usage()).commit();
+            updateSelectedFilter(filterDay);
+        }
+
+        if (filterDay != null) {
+            filterDay.setOnClickListener(v -> {
+                getChildFragmentManager().beginTransaction().replace(R.id.usage_container, new daily_usage()).commit();
+                updateSelectedFilter(filterDay);
             });
         }
+
+        if (filterWeek != null) {
+            filterWeek.setOnClickListener(v -> {
+                getChildFragmentManager().beginTransaction().replace(R.id.usage_container, new weekly_usage()).commit();
+                updateSelectedFilter(filterWeek);
+            });
+        }
+
+        if (filterMonth != null) {
+            filterMonth.setOnClickListener(v -> {
+                getChildFragmentManager().beginTransaction().replace(R.id.usage_container, new monthly_usage()).commit();
+                updateSelectedFilter(filterMonth);
+            });
+        }
+    }
+
+    private void updateSelectedFilter(TextView selected) {
+        if (filterDay != null) filterDay.setSelected(false);
+        if (filterWeek != null) filterWeek.setSelected(false);
+        if (filterMonth != null) filterMonth.setSelected(false);
+        if (selected != null) selected.setSelected(true);
     }
 }

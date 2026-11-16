@@ -5,17 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".account">
+    tools:context=".account"
+    android:background="@color/alert_page_background">
 
     <!-- nested scroll view allows for scrolling -->
 <androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@color/alert_page_background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/alert_page_background">
 
         <!-- account header -->
         <TextView
@@ -131,20 +134,6 @@
                     android:layout_marginLeft="12dp"
                     android:layout_marginRight="12dp"
                     android:background="@color/black"/>
-
-                <TextView
-                    android:id="@+id/account_battery"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="12dp"
-                    android:gravity="center_vertical"
-                    android:padding="16dp"
-                    android:text="@string/accFrag_battery"
-                    android:textSize="16sp"
-                    android:foreground="?selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"
-                    app:drawableLeftCompat="@drawable/p_battery_icon" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -280,27 +269,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/DataOptions">
 
-            <!-- display units options live here -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/account_unitsAndDisplay"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:clickable="true"
-                    android:drawablePadding="12dp"
-                    android:focusable="true"
-                    android:foreground="?selectableItemBackground"
-                    android:gravity="center_vertical"
-                    android:padding="16dp"
-                    android:text="@string/accFrag_unitsAndDisplay"
-                    android:textSize="16sp"
-                    app:drawableLeftCompat="@drawable/p_units_display_icon" />
-
-            </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <!-- log out button -->

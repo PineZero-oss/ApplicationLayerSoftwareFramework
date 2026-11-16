@@ -16,7 +16,6 @@
         android:layout_width="417dp"
         android:layout_height="0dp"
         android:fitsSystemWindows="true"
-        android:paddingBottom="20dp"
         app:layout_constraintBottom_toTopOf="@id/bottom_nav"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
