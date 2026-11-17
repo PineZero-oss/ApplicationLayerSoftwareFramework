@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".home">
+
+   <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:fillViewport="true">
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:paddingBottom="24dp">
+
+           <TextView
+               android:id="@+id/home_greeting"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="16dp"
+               android:layout_marginTop="20dp"
+               android:text="Good Day, john doe"
+               android:textSize="22sp"
+               android:textStyle="bold"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
+
+           <ImageView
+               android:id="@+id/home_menu_icon"
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:layout_marginEnd="16dp"
+               android:background="?selectableItemBackground"
+               android:clickable="true"
+               android:contentDescription="Menu"
+               android:focusable="true"
+               android:padding="8dp"
+               android:src="@drawable/tn_home_menu"
+               app:layout_constraintBottom_toBottomOf="@+id/home_greeting"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toTopOf="@+id/home_greeting" />
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/cardView"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="16dp"
+               android:layout_marginEnd="16dp"
+               android:layout_marginTop="20dp"
+               app:cardBackgroundColor="#18181B"
+               app:cardCornerRadius="20dp"
+               app:cardElevation="4dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/home_greeting">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:gravity="center"
+                   android:orientation="vertical"
+                   android:padding="12dp"
+                   android:paddingTop="10dp">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_marginEnd="70dp"
+                       android:text="@string/home_power_generation_heading"
+                       android:textColor="@color/grey"
+                       android:textSize="16sp"
+                       android:textStyle="bold" />
+
+                   <FrameLayout
+                       android:layout_width="180dp"
+                       android:layout_height="180dp"
+                       android:layout_gravity="center"
+                       android:layout_marginTop="16dp">
+
+                       <com.google.android.material.progressindicator.CircularProgressIndicator
+                           android:id="@+id/progress_bar"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:indeterminate="false"
+                           android:max="100"
+                           app:indicatorColor="@color/otp_textColor"
+                           app:indicatorSize="170dp"
+                           app:trackColor="#EBEBEB"
+                           app:trackCornerRadius="6dp"
+                           app:trackThickness="14dp" />
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:gravity="center"
+                           android:orientation="vertical"
+                           android:padding="16dp">
+
+                           <TextView
+                               android:id="@+id/power_generation_value"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:text="0 W"
+                               android:textColor="@color/white"
+                               android:textSize="22sp"
+                               android:textStyle="bold" />
+
+                           <TextView
+                               android:id="@+id/p_device_id"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:background="@drawable/solar_array_pill"
+                               android:padding="3dp"
+                               android:layout_marginTop="4dp"
+                               android:textColor="#757575"
+                               android:textSize="12sp" />
+
+                       </LinearLayout>
+
+                   </FrameLayout>
+
+               </LinearLayout>
+
+           </androidx.cardview.widget.CardView>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/notes_recyclerview"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:overScrollMode="never"
+               android:nestedScrollingEnabled="false"
+               android:layout_marginStart="16dp"
+               android:layout_marginEnd="16dp"
+               android:layout_marginTop="5dp"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintHorizontal_bias="0.0"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/cardView"
+               app:layout_constraintVertical_bias="0.066" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </androidx.core.widget.NestedScrollView>
+
+    <!-- add note button -->
+    <Button
+        android:id="@+id/btnAddNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#0D47A1"
+        android:text="@string/notes_mainTitle"
+        android:textAllCaps="false"
+        android:textColor="#ffffffff"
+        android:textSize="16sp" />
+
+
+
+</FrameLayout>
