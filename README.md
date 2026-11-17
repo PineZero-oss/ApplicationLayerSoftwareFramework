@@ -19,9 +19,6 @@ API: FastAPI. FastAPI is a modern and fast web framework coded with Python.\
 Authenticator: HMAC. Hash-Based Message Authentication Codes helps verify data integrity and authenticity by using a single shared secret key that is only known to the sender and receiver.\
 Communication: The mobile devices communicate with the local edge gateway by being connected to the same WiFi. In situations where WiFi is not available, Bluetooth Low Energy (BLE) is used.
 
-## How To Install And Use The Application
-_(Note: This will be entered at a later stage in development)_
-
 ## System Architecture
 This is the system architecture for the application. It delves into the details of how the application works, from the IoT device to the local gateway (which is the farm computer), from the database and API, and finally to the Android mobile devices. It also explains in detail what every step is.
 <img width="3375" height="1519" alt="SolarFlare System Architecture" src="https://github.com/user-attachments/assets/d365b882-2492-434f-b798-4518564bab8d" />
