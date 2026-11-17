@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.example.application_layer_software_framework_for_solar_powered_iot_systems",
+  "variantName": "debug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 1,
+      "versionName": "1.0",
+      "outputFile": "app-debug.apk"
+    }
+  ],
+  "elementType": "File",
+  "minSdkVersionForDexing": 24
+}

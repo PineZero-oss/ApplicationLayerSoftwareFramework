@@ -13,3 +13,14 @@
 .externalNativeBuild
 .cxx
 local.properties
+# Python-generated files
+__pycache__/
+*.py[cod]
+.venv/
+
+# Local secrets
+.env
+.env.*
+
+# Local gateway test logs
+L2-edge-gateway/logs/

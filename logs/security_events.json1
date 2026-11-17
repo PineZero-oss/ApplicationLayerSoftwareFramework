@@ -1,0 +1,1 @@
+{"timestamp": "2026-09-29T11:29:13.637644+00:00", "eventType": "INVALID_JSON", "severity": "MEDIUM", "deviceId": null, "description": "Incoming message is not valid JSON", "action": "MESSAGE_REJECTED", "message": "{\"deviceId\": \"incubator-01\", \"temperature\": 37.5"}

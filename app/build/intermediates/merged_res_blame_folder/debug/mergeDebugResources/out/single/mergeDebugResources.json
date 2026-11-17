@@ -1,0 +1,222 @@
+[
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_summarychart.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/summarychart.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_p_solar_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/p_solar_icon.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_bn_home.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/bn_home.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_p_preferences_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/p_preferences_icon.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_bn_usage.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/bn_usage.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_account_creation_rounded_corner.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/account_creation_rounded_corner.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_p_device_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/p_device_icon.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_fragment_weekly_usage.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/fragment_weekly_usage.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_note_items.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/note_items.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_fragment_add_note.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/fragment_add_note.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_arrow_back_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/arrow_back_icon.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_signin.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/signin.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_bn_efficiency.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/bn_efficiency.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_solar_array_pill.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/solar_array_pill.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_fragment_monthly_usage.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/fragment_monthly_usage.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_create_account.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/create_account.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/menu_top_usage_nav.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/menu/top_usage_nav.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_remove_note_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/remove_note_icon.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_fragment_account.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/fragment_account.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_account_creation_bg.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/account_creation_bg.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_bn_account.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/bn_account.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_fragment_edit_note.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/fragment_edit_note.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_edit_note_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/edit_note_icon.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_fragment_home.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_email_verification.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/email_verification.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_tn_home_menu.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/tn_home_menu.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_otp_input_background.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/otp_input_background.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_activity_main.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_fragment_usage.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/fragment_usage.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_p_notifications_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/p_notifications_icon.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_account_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/account_icon.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/xml_backup_rules.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_p_sync_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/p_sync_icon.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_p_local_data_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/p_local_data_icon.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_fragment_daily_usage.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/fragment_daily_usage.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/layout_fragment_efficiency.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/layout/fragment_efficiency.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_add_note_rounded_corner.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/add_note_rounded_corner.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_p_battery_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/p_battery_icon.xml"
+    },
+    {
+        "merged": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-debug-52:/drawable_p_units_display_icon.xml.flat",
+        "source": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-main-54:/drawable/p_units_display_icon.xml"
+    }
+]

@@ -1,0 +1,48 @@
+2026-10-01 13:22:30,386 | INFO | Accepted message from incubator-01: sequence 1
+2026-10-01 13:22:30,398 | INFO | Transmitted message from incubator-01
+2026-10-01 13:22:30,430 | INFO | Transmitted message from solar-battery-01
+2026-10-01 13:22:30,487 | INFO | Transmitted message from chicken-house-01
+2026-10-01 13:22:31,489 | INFO | Transmitted message from incubator-01
+2026-10-01 13:22:31,490 | WARNING | Dropped message from incubator-01
+2026-10-01 13:22:31,492 | INFO | Transmitted message from incubator-01
+2026-10-01 13:22:31,492 | INFO | Transmitted message from incubator-01
+2026-10-01 13:22:31,492 | WARNING | Duplicated message from incubator-01
+2026-10-01 13:22:31,494 | WARNING | Network disconnected
+2026-10-01 13:22:31,494 | WARNING | Network offline. Queued message from solar-battery-01
+2026-10-01 13:22:31,495 | INFO | Network reconnected. Releasing 1 messages
+2026-10-01 13:22:31,495 | INFO | Transmitted message from solar-battery-01
+2026-10-01 13:22:31,498 | WARNING | Rejected message: invalid JSON
+2026-10-01 13:22:31,499 | WARNING | Rejected message: temperature must be numeric
+2026-10-01 13:22:31,499 | WARNING | Rejected message: Missing fields: ['deviceId']
+2026-10-01 13:22:31,500 | WARNING | Created forged or anomalous message
+2026-10-01 13:22:31,502 | WARNING | Rejected message: humidity is outside valid range
+2026-10-01 13:22:31,504 | WARNING | Created replayed message with sequence number 2
+2026-10-01 13:22:31,505 | INFO | Accepted message from incubator-01: sequence 6
+2026-10-01 13:22:31,505 | WARNING | Created replayed message with sequence number 6
+2026-10-01 13:22:31,506 | WARNING | Rejected replay from incubator-01: sequence 6, last accepted 6
+2026-10-01 13:22:31,506 | WARNING | Created unauthorized command
+2026-10-01 13:22:31,507 | WARNING | Rejected commands: Command device is not registered
+2026-10-01 13:31:25,762 | INFO | Accepted message from incubator-01: sequence 1
+2026-10-01 13:31:25,766 | INFO | Transmitted message from incubator-01
+2026-10-01 13:31:25,769 | INFO | Transmitted message from solar-battery-01
+2026-10-01 13:31:25,774 | INFO | Transmitted message from chicken-house-01
+2026-10-01 13:31:26,778 | INFO | Transmitted message from incubator-01
+2026-10-01 13:31:26,779 | WARNING | Dropped message from incubator-01
+2026-10-01 13:31:26,780 | INFO | Transmitted message from incubator-01
+2026-10-01 13:31:26,781 | INFO | Transmitted message from incubator-01
+2026-10-01 13:31:26,781 | WARNING | Duplicated message from incubator-01
+2026-10-01 13:31:26,783 | WARNING | Network disconnected
+2026-10-01 13:31:26,783 | WARNING | Network offline. Queued message from solar-battery-01
+2026-10-01 13:31:26,784 | INFO | Network reconnected. Releasing 1 messages
+2026-10-01 13:31:26,785 | INFO | Transmitted message from solar-battery-01
+2026-10-01 13:31:26,788 | WARNING | Rejected message: invalid JSON
+2026-10-01 13:31:26,789 | WARNING | Rejected message: temperature must be numeric
+2026-10-01 13:31:26,789 | WARNING | Rejected message: Missing fields: ['deviceId']
+2026-10-01 13:31:26,790 | WARNING | Created forged or anomalous message
+2026-10-01 13:31:26,792 | WARNING | Rejected message: humidity is outside valid range
+2026-10-01 13:31:26,794 | WARNING | Created replayed message with sequence number 2
+2026-10-01 13:31:26,798 | INFO | Accepted message from incubator-01: sequence 6
+2026-10-01 13:31:26,799 | WARNING | Created replayed message with sequence number 6
+2026-10-01 13:31:26,799 | WARNING | Rejected replay from incubator-01: sequence 6, last accepted 6
+2026-10-01 13:31:26,799 | WARNING | Created unauthorized command
+2026-10-01 13:31:26,801 | WARNING | Rejected commands: Command device is not registered
