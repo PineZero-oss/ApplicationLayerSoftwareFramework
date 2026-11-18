@@ -1,44 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-mergeDebugResources-50:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-mergeDebugResources-62:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ronal\\.gradle\\caches\\9.8.0\\transforms\\d0e17913ad90e240bdd8c09dff8a6731\\transformed\\core-1.18.0\\res\\values-en-rXC\\values-en-rXC.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,251,456,657,858,1065,1270,1482",
-                        "endColumns": "195,204,200,200,206,204,211,203",
-                        "endOffsets": "246,451,652,853,1060,1265,1477,1681"
-                    },
-                    "to": {
-                        "startLines": "31,32,33,34,35,36,37,43",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "5965,6161,6366,6567,6768,6975,7180,8390",
-                        "endColumns": "195,204,200,200,206,204,211,203",
-                        "endOffsets": "6156,6361,6562,6763,6970,7175,7387,8589"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ronal\\.gradle\\caches\\9.8.0\\transforms\\330f9f53b48a12f6e91498108a5356c8\\transformed\\credentials-1.2.0-rc01\\res\\values-en-rXC\\values-en-rXC.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,270",
-                        "endColumns": "214,215",
-                        "endOffsets": "265,481"
-                    },
-                    "to": {
-                        "startLines": "29,30",
-                        "startColumns": "4,4",
-                        "startOffsets": "5534,5749",
-                        "endColumns": "214,215",
-                        "endOffsets": "5744,5960"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ronal\\.gradle\\caches\\9.8.0\\transforms\\342f9dd7f804fc5c8adcd2bf35cd982a\\transformed\\appcompat-1.8.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\keamo\\.gradle\\caches\\9.8.0\\transforms\\342f9dd7f804fc5c8adcd2bf35cd982a\\transformed\\appcompat-1.8.0\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ronal\\.gradle\\caches\\9.8.0\\transforms\\fa766abb8d46bd60c3e749ba241c8d3e\\transformed\\browser-1.4.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\keamo\\.gradle\\caches\\9.8.0\\transforms\\330f9f53b48a12f6e91498108a5356c8\\transformed\\credentials-1.2.0-rc01\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,270",
+                        "endColumns": "214,215",
+                        "endOffsets": "265,481"
+                    },
+                    "to": {
+                        "startLines": "29,30",
+                        "startColumns": "4,4",
+                        "startOffsets": "5534,5749",
+                        "endColumns": "214,215",
+                        "endOffsets": "5744,5960"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\keamo\\.gradle\\caches\\9.8.0\\transforms\\fa766abb8d46bd60c3e749ba241c8d3e\\transformed\\browser-1.4.0\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -69,6 +52,23 @@
                         "startOffsets": "7392,7592,7791,8002",
                         "endColumns": "199,198,210,201",
                         "endOffsets": "7587,7786,7997,8199"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\keamo\\.gradle\\caches\\9.8.0\\transforms\\d0e17913ad90e240bdd8c09dff8a6731\\transformed\\core-1.18.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,251,456,657,858,1065,1270,1482",
+                        "endColumns": "195,204,200,200,206,204,211,203",
+                        "endOffsets": "246,451,652,853,1060,1265,1477,1681"
+                    },
+                    "to": {
+                        "startLines": "31,32,33,34,35,36,37,43",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "5965,6161,6366,6567,6768,6975,7180,8390",
+                        "endColumns": "195,204,200,200,206,204,211,203",
+                        "endOffsets": "6156,6361,6562,6763,6970,7175,7387,8589"
                     }
                 }
             ]

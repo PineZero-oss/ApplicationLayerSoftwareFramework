@@ -1,29 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-mergeDebugResources-50:/values-v21/values-v21.xml",
+            "outputFile": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-mergeDebugResources-62:/values-v21/values-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ronal\\.gradle\\caches\\9.8.0\\transforms\\4b267215a46b11cfdd72e2122bcfd998\\transformed\\credentials-play-services-auth-1.2.0-rc01\\res\\values-v21\\values-v21.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "9",
-                        "endColumns": "12",
-                        "endOffsets": "543"
-                    },
-                    "to": {
-                        "startLines": "265",
-                        "startColumns": "4",
-                        "startOffsets": "18827",
-                        "endLines": "272",
-                        "endColumns": "12",
-                        "endOffsets": "19315"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\ronal\\.gradle\\caches\\9.8.0\\transforms\\342f9dd7f804fc5c8adcd2bf35cd982a\\transformed\\appcompat-1.8.0\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\keamo\\.gradle\\caches\\9.8.0\\transforms\\342f9dd7f804fc5c8adcd2bf35cd982a\\transformed\\appcompat-1.8.0\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,19,20,21,22,24,26,27,28,29,30,32,34,36,38,40,42,43,48,50,52,53,54,56,58,59,60,61,62,63,106,109,152,155,158,160,162,164,167,171,174,175,176,179,180,181,182,183,184,187,188,190,192,194,196,200,202,203,204,205,207,211,213,215,216,217,218,219,220,222,223,224,234,235,236,248",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -42,7 +23,26 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ronal\\.gradle\\caches\\9.8.0\\transforms\\2a263ec15c3dcc29af59c21a093a3b08\\transformed\\material-1.14.0\\res\\values-v21\\values-v21.xml",
+                    "source": "C:\\Users\\keamo\\.gradle\\caches\\9.8.0\\transforms\\4b267215a46b11cfdd72e2122bcfd998\\transformed\\credentials-play-services-auth-1.2.0-rc01\\res\\values-v21\\values-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "543"
+                    },
+                    "to": {
+                        "startLines": "265",
+                        "startColumns": "4",
+                        "startOffsets": "18827",
+                        "endLines": "272",
+                        "endColumns": "12",
+                        "endOffsets": "19315"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\keamo\\.gradle\\caches\\9.8.0\\transforms\\2a263ec15c3dcc29af59c21a093a3b08\\transformed\\material-1.14.0\\res\\values-v21\\values-v21.xml",
                     "from": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",

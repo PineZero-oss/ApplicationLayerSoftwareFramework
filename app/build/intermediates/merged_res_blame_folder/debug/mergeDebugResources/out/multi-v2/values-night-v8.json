@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-mergeDebugResources-50:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.application_layer_software_framework_for_solar_powered_iot_systems.app-mergeDebugResources-62:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ronal\\AndroidStudioProjects\\ApplicationLayerSoftwareFramework\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "C:\\Users\\keamo\\AndroidStudioProjects\\ApplicationLayerSoftwareFramework\\app\\src\\main\\res\\values-night\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ronal\\.gradle\\caches\\9.8.0\\transforms\\342f9dd7f804fc5c8adcd2bf35cd982a\\transformed\\appcompat-1.8.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\keamo\\.gradle\\caches\\9.8.0\\transforms\\342f9dd7f804fc5c8adcd2bf35cd982a\\transformed\\appcompat-1.8.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ronal\\.gradle\\caches\\9.8.0\\transforms\\2a263ec15c3dcc29af59c21a093a3b08\\transformed\\material-1.14.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\keamo\\.gradle\\caches\\9.8.0\\transforms\\2a263ec15c3dcc29af59c21a093a3b08\\transformed\\material-1.14.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

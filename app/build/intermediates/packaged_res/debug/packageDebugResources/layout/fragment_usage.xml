@@ -5,17 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".usage">
+    tools:context=".usage"
+    android:background="@color/alert_page_background">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:background="@color/alert_page_background">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/alert_page_background">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -29,6 +32,7 @@
                 app:layout_constraintVertical_bias="0.037" />
 
             <TextView
+                android:id="@+id/usage_subheading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -40,28 +44,58 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.074" />
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/toolbar_usage"
-                android:layout_width="32dp"
-                android:layout_height="61dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:scrollbars="none"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.926"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.042"
-                app:menu="@menu/top_usage_nav" />
+                app:layout_constraintTop_toBottomOf="@id/usage_subheading">
+
+                <LinearLayout
+                    android:id="@+id/severity_filter_row"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/filter_day"
+                        style="@style/AlertFilterPill"
+                        android:text="Day"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/filter_week"
+                        style="@style/AlertFilterPill"
+                        android:text="Week"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <TextView
+                        android:id="@+id/filter_month"
+                        style="@style/AlertFilterPill"
+                        android:text="Month"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                </LinearLayout>
+            </HorizontalScrollView>
 
             <FrameLayout
                 android:id="@+id/usage_container"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/toolbar_usage"
+                app:layout_constraintTop_toBottomOf="@id/horizontalScrollView"
                 app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
